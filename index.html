@@ -4,19 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screentone Generator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">  </head>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-
-    <style>
-        .grayscale-picker input[type="color"] {
-            filter: grayscale(1);
-        }
-        .center-element {
-        	margin : 0 auto;
-        }
-    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -24,7 +16,6 @@
     		<h1 class="">Screentone Generator</h1>
     	</div>
         
-
         <!-- Radio buttons for option selection -->
         <div class="form-group row justify-content-center text-center ">
             <div class="col-sm-2 form-check">
@@ -67,13 +58,9 @@
 		    </div>
 		</div>
 
-
 		<!-- Size control row -->
 		<div class="form-group row justify-content-center align-items-center">
 		    <label class="col-sm-2 col-form-label">Tile size</label>
-		<!--<div class="col-sm-2 ">
-		        <img src="https://via.placeholder.com/100" alt="Placeholder Image" class="img-fluid">
-		    </div> -->
 		    <div class="col-sm-4 ">
 		        <input type="range" class="form-control-range" id="sizeSlider" min="2" max="100" value="26" oninput="syncSliderText('size')" onchange="refresh()">
 		    </div>
@@ -86,9 +73,6 @@
 		<!-- Angle control row -->
 		<div class="form-group row justify-content-center align-items-center">
 		    <label class="col-sm-2 col-form-label">Angle</label>
-<!-- 		    <div class="col-sm-2 ">
-		        <img src="https://via.placeholder.com/100" alt="Placeholder Image" class="img-fluid">
-		    </div> -->
 		    <div class="col-sm-4">
 		        <input type="range" class="form-control-range" id="angleSlider" min="0" max="90" value="45" oninput="syncSliderText('angle')" onchange="refresh()">
 		    </div>
@@ -154,23 +138,8 @@
                         <div>Random</div>
                     </label>
                 </div>
-<!--                 <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape8" value="arbitrary" onclick="refresh()">
-                    <label class="form-check-label" for="shape8">
-                        <img src="img/arbitrary.png" alt="Shape 8">
-                        <div>Arbitrary</div>
-                    </label>
-                </div> -->
             </div>
         </div>
-
-        <!-- Arbitrary screentone formula input -->
-<!--         <div class="form-group row justify-content-center">
-            <label class="col-sm-2 col-form-label">Threshold formula</label>
-            <div class="col-sm-8">
-                <input type="" class="form-control" id="formula" value="sin(xFreq * cos(angle) - yFreq * sin(angle)) * cos(xFreq * sin(angle) + yFreq * cos(angle) + PI/2)" onchange="refresh()">
-            </div>
-        </div> -->
 
         <!-- Image size control row -->
         <div class="form-group row justify-content-center">
@@ -201,82 +170,29 @@
 	    </footer>
     </div>
 
+    <script src="interface.js"></script>
+    <script src="screentone.js"></script>
     <script>
         function refresh() {
             const option1 = document.getElementById('option1').checked;
             const option2 = document.getElementById('option2').checked;
             var width = document.getElementById('width').value;
             var height = document.getElementById('height').value;
-
-            // Color picker hide/show
-            const colorPicker2Container = document.getElementById('colorPicker2Container');
             const colorSwapButtonContainer = document.getElementById('colorSwapButton');
-            const gradientDirContainer = document.getElementById("gradient-direction-container");
-            
+                        
+			var canvas = document.createElement('canvas');
+			canvas.width = width;
+			canvas.height = height;
+			var ctx = canvas.getContext('2d');
+
+
             if (option1) {
-                colorPicker2Container.style.display = 'none';
-                colorSwapButtonContainer.style.display = 'none';
-                gradientDirContainer.style.display = 'none';
-
-	            // solidcolor
-	            var colorPicker = document.getElementById('colorPicker1');
-	            var selectedColor = colorPicker.value;
-	            var canvas = document.createElement('canvas');
-	            canvas.width = width;
-	            canvas.height = height;
-	            var ctx = canvas.getContext('2d');
-	            ctx.fillStyle = selectedColor;
-	            ctx.fillRect(0, 0, width, height);
-	            var imageData = ctx.getImageData(0, 0, width, height);
-
+            	var imageData = createFlatImageData(canvas);
             } else if (option2) {
-                colorPicker2Container.style.display = 'block';
-                colorSwapButtonContainer.style.display = 'block';
-                gradientDirContainer.style.display = 'flex';
-                // gradient
-				var colorPicker1 = document.getElementById('colorPicker1');
-				var colorPicker2 = document.getElementById('colorPicker2');
-				var color1 = colorPicker1.value;
-				var color2 = colorPicker2.value;
-				var canvas = document.createElement('canvas');
-				canvas.width = width;
-				canvas.height = height;
-				var ctx = canvas.getContext('2d');
-
-				const radioButtons = document.querySelectorAll('input[name="gradient-direction"]');
-
-				let selectedValue;
-				for (const radioButton of radioButtons) {
-				  if (radioButton.checked) {
-				    selectedValue = radioButton.value;
-				    break; // Exit the loop once a checked button is found
-				  }
-				}
-				if (selectedValue == 1){ // vertical
-					var gradient = ctx.createLinearGradient(0, 0, 0, height);
-				}else if (selectedValue == 2){ //horizontal
-					var gradient = ctx.createLinearGradient(0, 0, width, 0);
-				}
-				
-				gradient.addColorStop(0, color1);
-				gradient.addColorStop(1, color2);
-				ctx.fillStyle = gradient;
-				ctx.fillRect(0, 0, width, height);
-				var imageData = ctx.getImageData(0, 0, width, height);
+            	var imageData = createGradientImageData(canvas);
             }
 
-
-
-	        const shapes = document.getElementsByName('shape');
-	        let selectedShape = null;
-
-	        // Iterate through the radio buttons to find the checked one
-	        for (let i = 0; i < shapes.length; i++) {
-	            if (shapes[i].checked) {
-	                selectedShape = shapes[i].value;
-	                break;
-	            }
-	        }
+            selectedShape = getSelectedShape();
 
             var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
             var angle = document.getElementById('angleText').value;
@@ -284,248 +200,15 @@
 
             // Put the screentone image data back to the canvas
             ctx.putImageData(screentoneData, 0, 0);
-
-            // Create an image element
             var img = new Image();
             img.src = canvas.toDataURL();
-
-            // Clear previous content in imgWrapper div
             var imgWrapper = document.getElementById('imgWrapper');
             imgWrapper.innerHTML = '';
-
-            // Append the new image to imgWrapper div
             imgWrapper.appendChild(img);
-        }
-
-        function syncSliderText(whichOne) {
-            var sliderName = whichOne + "Slider";
-            var textName = whichOne + "Text";
-            const slider = document.getElementById(sliderName);
-            const text = document.getElementById(textName);
-            text.value = slider.value;
-        }
-
-        function syncTextSlider(whichOne) {
-            var sliderName = whichOne + "Slider";
-            var textName = whichOne + "Text";
-            const slider = document.getElementById(sliderName);
-            const text = document.getElementById(textName);
-            if ((text.value < 2) && (whichOne == "size")) text.value = 2;
-            if (text.value > 100) text.value = 100;
-            slider.value = text.value;
-        }
-
-        function handleColorChange(picker) {
-            const grayscaleColor = toGrayscale(picker.value);
-            picker.value = grayscaleColor;
-            refresh();
-        }
-
-        function toGrayscale(hex) {
-            const r = parseInt(hex.substr(1, 2), 16);
-            const g = parseInt(hex.substr(3, 2), 16);
-            const b = parseInt(hex.substr(5, 2), 16);
-            const avg = Math.round((r + g + b) / 3);
-            const grayHex = avg.toString(16).padStart(2, '0');
-            return `#${grayHex}${grayHex}${grayHex}`;
-        }
-
-        function copyToClipboard() {
-            var img = document.getElementById('imgWrapper').getElementsByTagName('img')[0];
-            if (img) {
-                var canvas = document.createElement('canvas');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                var ctx = canvas.getContext('2d');
-                ctx.drawImage(img, 0, 0);
-
-                canvas.toBlob(function(blob) {
-                    var item = new ClipboardItem({ 'image/png': blob });
-                    navigator.clipboard.write([item]).then(function() {
-                        console.log('Image copied to clipboard.');
-                        //alert('Image copied to clipboard.');
-                    }, function(error) {
-                        console.error('Unable to copy image: ', error);
-                        alert('Unable to copy image.');
-                    });
-                }, 'image/png');
-            } else {
-                alert('No image to copy.');
-            }
-        }
-
-        function saveImage() {
-            var img = document.getElementById('imgWrapper').getElementsByTagName('img')[0];
-            if (img) {
-                var canvas = document.createElement('canvas');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                var ctx = canvas.getContext('2d');
-                ctx.drawImage(img, 0, 0);
-
-                canvas.toBlob(function(blob) {
-                    var url = URL.createObjectURL(blob);
-
-                    // Create a temporary <a> element and trigger download
-                    var a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'image.png';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                }, 'image/png');
-            } else {
-                alert('No image to save.');
-            }
-        }
-        function swapColors() {
-            const colorPicker1 = document.getElementById('colorPicker1');
-            const colorPicker2 = document.getElementById('colorPicker2');
-            const tempColor = colorPicker1.value;
-            colorPicker1.value = colorPicker2.value;
-            colorPicker2.value = tempColor;
-            refresh();
-        }
-
-        function getRandomIntInclusive(min, max) {
-		  	min = Math.ceil(min);
-		  	max = Math.floor(max);
-		  	return Math.floor(Math.random() * (max - min + 1)) + min;
-		}
-
-
-        function applyScreentone(imageData, width, height, frequency, angle, shape) {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = width;
-            canvas.height = height;
-            const outputData = ctx.createImageData(width, height);
-
-            const thresholdPattern = createThresholdPattern(width, height, frequency, angle, shape);
-
-            for (let y = 0; y < height; y++) {
-                for (let x = 0; x < width; x++) {
-                    const index = (y * width + x) * 4;
-                    const gray = (imageData[index] + imageData[index + 1] + imageData[index + 2]) / 3;
-                    const threshold = thresholdPattern[y % thresholdPattern.length][x % thresholdPattern[0].length];
-                    const color = gray < threshold ? 0 : 255;
-
-                    outputData.data[index] = color;
-                    outputData.data[index + 1] = color;
-                    outputData.data[index + 2] = color;
-                    outputData.data[index + 3] = 255; // Alpha channel
-                }
-            }
-
-            return outputData;
-        }
-
-        function createThresholdPattern(width, height, frequency, angle, shape) {
-            const pattern = [];
-
-            if (shape != "random"){
-	            // Corrections
-	            var angleCorrection = 0;
-	            switch (shape) {
-	            	case 'sine-cosine':
-	                	angleCorrection = 90;
-	                    break;
-	            	case 'circles':
-	                	angleCorrection = 45;
-	                	frequency = frequency / Math.sqrt(2);
-	                    break;
-	            	case 'lines':
-	                	angleCorrection = 45;
-	                	frequency = frequency / Math.sqrt(2);
-	                    break;
-	            	case 'rounded-squares':
-	                	angleCorrection = 135;
-	                	frequency = frequency / Math.sqrt(2);
-	                    break;
-	                case 'squiggly-lines':	
-	                	angleCorrection = 135;
-	                	frequency = frequency / Math.sqrt(2);
-	                	break;
-	                case 'lemons':	
-	                	frequency = frequency / Math.sqrt(2);
-	                	angleCorrection = 135;
-	                	break;
-	                }
-
-	            const radians = (angle + angleCorrection) * Math.PI / 180;
-	            const sin = Math.sin(radians);
-	            const cos = Math.cos(radians);
-
-	            for (let y = 0; y < height; y++) {
-	                pattern[y] = [];
-	                for (let x = 0; x < width; x++) {
-	                    let value;
-	                    const xFreq = x * frequency;
-	                    const yFreq = y * frequency;
-
-	                    switch (shape) {
-	                        case 'sine-cosine':
-	                            value = Math.sin(xFreq * cos - yFreq * sin) * Math.cos(xFreq * sin + yFreq * cos + Math.PI/2);
-	                            break;
-	                        case 'circles':
-	                            value = Math.abs(Math.sin(xFreq * cos - yFreq * sin + Math.PI/2)) + Math.abs(Math.cos(xFreq * sin + yFreq * cos + Math.PI/2 ));
-	                            break;
-	                        case 'lines':
-	                            value = Math.sin(xFreq * cos - yFreq * sin);
-	                            break;
-	                        case 'rounded-squares':
-	                            value = Math.abs(Math.sin(xFreq * cos - yFreq * sin)) * Math.abs(Math.cos(xFreq * sin + yFreq * cos)) *2;
-	                            break;
-	                        case 'cross':
-	                            value = Math.abs(Math.sin(xFreq * cos - yFreq * sin)) + Math.cos(xFreq * sin + yFreq * cos);
-	                            break;
-	                        case 'lemons':
-	                            value = Math.abs(Math.sin(xFreq * cos - yFreq * sin )) - Math.abs(Math.cos(xFreq * sin + yFreq * cos + Math.PI/2 ));
-	                            break;
-	                        case 'squiggly-lines':
-	                            value = Math.abs(Math.sin(xFreq * cos - yFreq * sin)) + Math.cos(xFreq * sin + yFreq * cos + Math.PI/2 );
-	                            break;
-
-	                    }
-	                    pattern[y][x] = (value+1) * 128;
-	                }
-	            }
-
-		     	var minValue = pattern[0][0];
-		     	var maxValue = pattern[0][0];
-		     	for (let i = 0; i < pattern.length; i++) {
-		     	  for (let j = 0; j < pattern[i].length; j++) {
-		     	    const value = pattern[i][j];
-		     	    minValue = Math.min(minValue, value);
-		     	    maxValue = Math.max(maxValue, value);
-		     	  }
-		     	}
-
-	            for (let y = 0; y < height; y++) {
-	                for (let x = 0; x < width; x++) {
-	                	pattern[y][x] = pattern[y][x] - minValue;
-	                	//pattern[y][x] = pattern[y][x] * 255 / maxValue; // 🤔 whats going on here?
-	                }
-	            }
-            }else{
-            	for (let y = 0; y < height; y++) {
-            		pattern[y] = [];
-            		for (let x = 0; x < width; x++) {
-                    	pattern[y][x] = getRandomIntInclusive(0, 255);
-                	}
-                }
-            }
-        	
-            return pattern;
         }
 
         // Initial call to setup the page
         refresh();
-
-
-
     </script>
-
 </body>
 </html>

@@ -1,0 +1,6 @@
+.grayscale-picker input[type="color"] {
+	filter: grayscale(1);
+}
+.center-element {
+	margin : 0 auto;
+}

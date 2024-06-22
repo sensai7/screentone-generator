@@ -1,0 +1,1111 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"se",
+				"selectedShape"
+			],
+			[
+				"colo",
+				"colorPicker2Container"
+			],
+			[
+				"sele",
+				"selectedValue"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"sel",
+				"selectedValue"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"m",
+				"minValue"
+			],
+			[
+				"ma",
+				"maxValue"
+			],
+			[
+				"mi",
+				"minValue"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"s",
+				"style"
+			],
+			[
+				"wh",
+				"white"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"font-s",
+				"font-style"
+			],
+			[
+				"getRa",
+				"generateRandomString"
+			],
+			[
+				"sha",
+				"sharpnessValue"
+			],
+			[
+				"ar",
+				"array2String"
+			],
+			[
+				"p",
+				"print"
+			],
+			[
+				"spl",
+				"splits"
+			],
+			[
+				"c",
+				"currentFrame"
+			],
+			[
+				"swa",
+				"swatches"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"layer",
+				"layerName"
+			],
+			[
+				"fram",
+				"frameLayer"
+			],
+			[
+				"fra",
+				"frameLayer"
+			],
+			[
+				"page",
+				"pageEntry"
+			],
+			[
+				"fo",
+				"fontCatalog"
+			],
+			[
+				"all",
+				"allGraphicFrames"
+			],
+			[
+				"inde",
+				"indexOf"
+			],
+			[
+				"la",
+				"layerName"
+			],
+			[
+				"re",
+				"replace"
+			],
+			[
+				"bes",
+				"bestTol"
+			],
+			[
+				"al",
+				"alert"
+			],
+			[
+				"dd",
+				"ddMoans"
+			],
+			[
+				"moans",
+				"moanRegexList"
+			],
+			[
+				"pa",
+				"pairs"
+			],
+			[
+				"arr",
+				"arrayENG"
+			],
+			[
+				"a",
+				"alert"
+			],
+			[
+				"book",
+				"bookmarkName"
+			],
+			[
+				"pri",
+				"printData"
+			],
+			[
+				"color",
+				"color1ET"
+			],
+			[
+				"mat",
+				"matches"
+			],
+			[
+				"res",
+				"restoreSettings"
+			],
+			[
+				"fdf",
+				"fdfList2items"
+			],
+			[
+				"X",
+				"lineEndX"
+			],
+			[
+				"is",
+				"isFlipped"
+			],
+			[
+				"lin",
+				"lineEndY"
+			],
+			[
+				"pag",
+				"pageHeight"
+			],
+			[
+				"STATE_SO",
+				"STATE_SONG_POSITION_LSB"
+			],
+			[
+				"STATE_QTR",
+				"STATE_QTR_MIN"
+			],
+			[
+				"STATE_QT",
+				"STATE_QTR_HOUR"
+			],
+			[
+				"STATE_SYSEX_S",
+				"STATE_SYSEX_SEQ"
+			],
+			[
+				"STATE_SY",
+				"STATE_SYSEX_START"
+			],
+			[
+				"STATE_S",
+				"STATE_SYS_RESET"
+			],
+			[
+				"STATE_AC",
+				"STATE_ACTIVE_SENSING"
+			],
+			[
+				"STATE_CA",
+				"STATE_CHANNEL_AT"
+			],
+			[
+				"par",
+				"par0"
+			],
+			[
+				"pr",
+				"printMessage"
+			],
+			[
+				"param",
+				"param2"
+			],
+			[
+				"cho",
+				"chord"
+			],
+			[
+				"sw",
+				"switch"
+			],
+			[
+				"MIDI",
+				"MIDIChordSetChord"
+			],
+			[
+				"HAL_",
+				"HAL_Delay"
+			],
+			[
+				"str",
+				"strum"
+			],
+			[
+				"uint",
+				"uint16_t"
+			],
+			[
+				"GATE_",
+				"GATE_ON"
+			],
+			[
+				"PWM",
+				"PWM_CV_1"
+			],
+			[
+				"PWM_",
+				"PWM_AFTERTOUCH"
+			],
+			[
+				"MDI",
+				"MIDI_PITCH_WHEEL"
+			],
+			[
+				"mre",
+				"morePixels"
+			],
+			[
+				"fill",
+				"fillMore"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"line-",
+				"line-height"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"kanj",
+				"kanjiMap"
+			],
+			[
+				"w",
+				"rows"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"text",
+				"textFrameInfo"
+			],
+			[
+				"TOLERA",
+				"TOLERANCE"
+			],
+			[
+				"las",
+				"lastLine"
+			],
+			[
+				"tar",
+				"target"
+			],
+			[
+				"firs",
+				"firstSplit"
+			],
+			[
+				"first",
+				"firstLines"
+			],
+			[
+				"lo",
+				"longestWord"
+			],
+			[
+				"cur",
+				"currentLen"
+			],
+			[
+				"long",
+				"longestLen"
+			],
+			[
+				"cu",
+				"currentLine"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Screentone Generator</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\">  </head>\n    <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css\" rel=\"stylesheet\">\n    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\" rel=\"stylesheet\">\n\n</head>\n<body>\n    <div class=\"container mt-5\">\n    \t<div id=\"headerWrapper\" class=\"d-flex justify-content-center align-items-center\" >\n    \t\t<h1 class=\"\">Screentone Generator</h1>\n    \t</div>\n        \n        <!-- Radio buttons for option selection -->\n        <div class=\"form-group row justify-content-center text-center \">\n            <div class=\"col-sm-2 form-check\">\n                <input class=\"form-check-input \" type=\"radio\" name=\"options\" id=\"option1\" value=\"1\" onclick=\"refresh()\" checked>\n                <label class=\"form-check-label\" for=\"option1\">Single color</label>\n            </div>\n            <div class=\"col-sm-2 form-check\">\n                <input class=\"form-check-input\" type=\"radio\" name=\"options\" id=\"option2\" value=\"2\" onclick=\"refresh()\">\n                <label class=\"form-check-label\" for=\"option2\">Gradient</label>\n            </div>\n        </div>\n\n        <!-- Color pickers -->\n        <div id=\"colorPickers\" class=\"form-group row justify-content-center text-center \">\n            <div class=\"col-sm-2 \">\n                <input type=\"color\" class=\"grayscale-picker form-control center-element\" id=\"colorPicker1\" style=\"width: 100px; height: 50px;\" value=\"#a6a6a6\" onchange=\"handleColorChange(this)\">\n                <div>Primary color</div>\n            </div>\n\t        <div class=\"col-sm-1 swap-button\" id=\"colorSwapButton\">\n\t            <button class=\"btn btn-primary\" onclick=\"swapColors()\" style=\"margin-top: 10px;\" >\n\t                <i class=\"bi bi-arrow-left-right\"></i> \n\t            </button>\n\t        </div>\n            <div class=\"col-sm-2 \" id=\"colorPicker2Container\" >\n                <input type=\"color\" class=\"grayscale-picker form-control center-element\" id=\"colorPicker2\" style=\"width: 100px; height: 50px; margin : 0 auto;\" value=\"#656565\" onchange=\"handleColorChange(this)\">\n                <div>Secondary color</div>\n            </div>\n        </div>\n\n\t\t<!-- Gradient direction -->\n\t\t<div class=\"form-group row justify-content-center text-center\" id=\"gradient-direction-container\">\n\t\t    <label class=\"col-sm-2 col-form-label\">Gradient direction</label>\n\t\t    <div class=\"col-sm-2 form-check d-flex align-items-center \">\n\t\t        <input class=\"form-check-input\" type=\"radio\" name=\"gradient-direction\" id=\"vertical\" value=\"1\" onclick=\"refresh()\" checked>\n\t\t        <label class=\"form-check-label\" for=\"vertical\">Vertical</label>\n\t\t    </div>\n\t\t    <div class=\"col-sm-2 form-check d-flex align-items-center \">\n\t\t        <input class=\"form-check-input\" type=\"radio\" name=\"gradient-direction\" id=\"horizontal\" value=\"2\" onclick=\"refresh()\">\n\t\t        <label class=\"form-check-label\" for=\"horizontal\">Horizontal</label>\n\t\t    </div>\n\t\t</div>\n\n\t\t<!-- Size control row -->\n\t\t<div class=\"form-group row justify-content-center align-items-center\">\n\t\t    <label class=\"col-sm-2 col-form-label\">Tile size</label>\n\t\t    <div class=\"col-sm-4 \">\n\t\t        <input type=\"range\" class=\"form-control-range\" id=\"sizeSlider\" min=\"2\" max=\"100\" value=\"26\" oninput=\"syncSliderText('size')\" onchange=\"refresh()\">\n\t\t    </div>\n\t\t    <div class=\"col-sm-1.5\">\n\t\t        <input type=\"number\" class=\"form-control\" id=\"sizeText\" min=\"2\" max=\"100\" value=\"26\" oninput=\"syncTextSlider('size')\" onchange=\"refresh()\">\n\t\t    </div>\n\t\t    <label class=\"col-sm-1 col-form-label\">px</label>\n\t\t</div>\n\n\t\t<!-- Angle control row -->\n\t\t<div class=\"form-group row justify-content-center align-items-center\">\n\t\t    <label class=\"col-sm-2 col-form-label\">Angle</label>\n\t\t    <div class=\"col-sm-4\">\n\t\t        <input type=\"range\" class=\"form-control-range\" id=\"angleSlider\" min=\"0\" max=\"90\" value=\"45\" oninput=\"syncSliderText('angle')\" onchange=\"refresh()\">\n\t\t    </div>\n\t\t    <div class=\"col-sm-1.5\">\n\t\t        <input type=\"number\" class=\"form-control\" id=\"angleText\" min=\"0\" max=\"90\" value=\"45\" oninput=\"syncTextSlider('angle')\" onchange=\"refresh()\">\n\t\t    </div>\n\t\t    <label class=\"col-sm-1 col-form-label\">°</label>\n\t\t</div>\n\n\n        <!-- Shape selection row -->\n        <div class=\"form-group text-center\">\n            <label class=\"text-center\">Shape</label>\n            <div class=\"row justify-content-center align-items-center\">\n                <div class=\"col-sm-2 \">\n                    <input class=\"form-check-input\" type=\"radio\" name=\"shape\" id=\"shape1\" value=\"sine-cosine\" onclick=\"refresh()\" checked>\n                    <label class=\"form-check-label\" for=\"shape1\">\n                        <img src=\"img/sine-cosine.png\" alt=\"Shape 1\">\n                        <div>Sine-cosine</div>\n                    </label>\n                </div>\n                <div class=\"col-sm-2 \">\n                    <input class=\"form-check-input\" type=\"radio\" name=\"shape\" id=\"shape2\" value=\"circles\" onclick=\"refresh()\">\n                    <label class=\"form-check-label\" for=\"shape2\">\n                        <img src=\"img/circles.png\" alt=\"Shape 2\">\n                        <div>Circles</div>\n                    </label>\n                </div>\n                <div class=\"col-sm-2 \">\n                    <input class=\"form-check-input\" type=\"radio\" name=\"shape\" id=\"shape3\" value=\"lines\" onclick=\"refresh()\">\n                    <label class=\"form-check-label\" for=\"shape3\">\n                        <img src=\"img/lines.png\" alt=\"Shape 3\">\n                        <div>Lines</div>\n                    </label>\n                </div>\n                <div class=\"col-sm-2 \">\n                    <input class=\"form-check-input\" type=\"radio\" name=\"shape\" id=\"shape4\" value=\"rounded-squares\" onclick=\"refresh()\">\n                    <label class=\"form-check-label\" for=\"shape4\">\n                        <img src=\"img/roundedsquares.png\" alt=\"Shape 4\">\n                        <div>Rounded squares</div>\n                    </label>\n                </div>\n            </div>\n            <div class=\"row justify-content-center align-items-center\">\n                <div class=\"col-sm-2 \">\n                    <input class=\"form-check-input\" type=\"radio\" name=\"shape\" id=\"shape5\" value=\"squiggly-lines\" onclick=\"refresh()\">\n                    <label class=\"form-check-label\" for=\"shape5\">\n                        <img src=\"img/squiggly.png\" alt=\"Shape 5\">\n                        <div>Squiggly lines</div>\n                    </label>\n                </div>\n                <div class=\"col-sm-2 \">\n                    <input class=\"form-check-input\" type=\"radio\" name=\"shape\" id=\"shape6\" value=\"lemons\" onclick=\"refresh()\">\n                    <label class=\"form-check-label\" for=\"shape6\">\n                        <img src=\"img/lemons.png\" alt=\"Shape 6\">\n                        <div>Lemons</div>\n                    </label>\n                </div>\n                <div class=\"col-sm-2 \">\n                    <input class=\"form-check-input\" type=\"radio\" name=\"shape\" id=\"shape7\" value=\"random\" onclick=\"refresh()\">\n                    <label class=\"form-check-label\" for=\"shape7\">\n                        <img src=\"img/random.png\" alt=\"Shape 7\">\n                        <div>Random</div>\n                    </label>\n                </div>\n            </div>\n        </div>\n\n        <!-- Image size control row -->\n        <div class=\"form-group row justify-content-center\">\n            <label class=\"col-sm-2 col-form-label\">Image size</label>\n            <div class=\"col-sm-2\">\n                <input type=\"number\" class=\"form-control\" id=\"width\" min=\"1\" value=\"256\" onchange=\"refresh()\">\n            </div>\n            <label class=\"col-form-label\">x</label>\n            <div class=\"col-sm-2\">\n                <input type=\"number\" class=\"form-control\" id=\"height\" min=\"1\" value=\"256\" onchange=\"refresh()\">\n            </div>\n            <label class=\"col-form-label\">px</label>\n        </div>\n\n        <div id=\"imgWrapper\" class=\"d-flex justify-content-center align-items-center\" ></div>\n\n        <!-- Buttons for copy and save -->\n        <div class=\"text-center mt-2\">\n            <button class=\"btn btn-primary mr-2\" onclick=\"copyToClipboard()\">Copy to clipboard</button>\n            <button class=\"btn btn-success\" onclick=\"saveImage()\">Save as .png</button>\n        </div>\n\n\t    <!-- Footer -->\n\t    <footer class=\"text-center mt-4 py-4\">\n\t        <p>Made by \n\t            <a href=\"https://x.com/GonzaloLetterer\" target=\"_blank\"> @GonzaloLetterer </a>\n\t        </p>\n\t    </footer>\n    </div>\n\n    <script src=\"interface.js\"></script>\n    <script src=\"screentone.js\"></script>\n    <script>\n        function refresh() {\n            const option1 = document.getElementById('option1').checked;\n            const option2 = document.getElementById('option2').checked;\n            var width = document.getElementById('width').value;\n            var height = document.getElementById('height').value;\n            const colorSwapButtonContainer = document.getElementById('colorSwapButton');\n                        \n\t\t\tvar canvas = document.createElement('canvas');\n\t\t\tcanvas.width = width;\n\t\t\tcanvas.height = height;\n\t\t\tvar ctx = canvas.getContext('2d');\n\n            if (option1) {\n            \tvar imageData = createFlatImageData(canvas);\n            } else if (option2) {\n            \tvar imageData = createGradientImageData(canvas);\n            }\n\n            selectedShape = getSelectedShape();\n\n            var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;\n            var angle = document.getElementById('angleText').value;\n            var screentoneData = applyScreentone(imageData.data, width, height, frequency, angle, selectedShape);\n\n            // Put the screentone image data back to the canvas\n            ctx.putImageData(screentoneData, 0, 0);\n            var img = new Image();\n            img.src = canvas.toDataURL();\n            img.id\n            var imgWrapper = document.getElementById('imgWrapper');\n            imgWrapper.innerHTML = '';\n            imgWrapper.appendChild(img);\n        }\n\n        // Initial call to setup the page\n        refresh();\n    </script>\n</body>\n</html>\n",
+			"file": "index.html",
+			"file_size": 10733,
+			"file_write_time": 133635361716579633,
+			"settings":
+			{
+				"buffer_size": 10538,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					11,
+					1,
+					"insert",
+					{
+						"characters": "\nimg.id"
+					},
+					"CAAAABwoAAAAAAAAHSgAAAAAAAAAAAAAHSgAAAAAAAApKAAAAAAAAAAAAAApKAAAAAAAACooAAAAAAAAAAAAACooAAAAAAAAKygAAAAAAAAAAAAAKygAAAAAAAAsKAAAAAAAAAAAAAAsKAAAAAAAAC0oAAAAAAAAAAAAAC0oAAAAAAAALigAAAAAAAAAAAAALigAAAAAAAAvKAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAHCgAAAAAAAAcKAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "interface.js",
+			"settings":
+			{
+				"buffer_size": 4974,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					3,
+					1,
+					"paste",
+					null,
+					"AgAAALUHAAAAAAAATAoAAAAAAAAAAAAATAoAAAAAAABMCgAAAAAAABsDAAAgICAgdmFyIGltZyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdpbWdXcmFwcGVyJykuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ2ltZycpWzBdOwogICAgaWYgKGltZykgewogICAgICAgIHZhciBjYW52YXMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdjYW52YXMnKTsKICAgICAgICBjYW52YXMud2lkdGggPSBpbWcud2lkdGg7CiAgICAgICAgY2FudmFzLmhlaWdodCA9IGltZy5oZWlnaHQ7CiAgICAgICAgdmFyIGN0eCA9IGNhbnZhcy5nZXRDb250ZXh0KCcyZCcpOwogICAgICAgIGN0eC5kcmF3SW1hZ2UoaW1nLCAwLCAwKTsKCiAgICAgICAgY2FudmFzLnRvQmxvYihmdW5jdGlvbihibG9iKSB7CiAgICAgICAgICAgIHZhciB1cmwgPSBVUkwuY3JlYXRlT2JqZWN0VVJMKGJsb2IpOwoKICAgICAgICAgICAgLy8gQ3JlYXRlIGEgdGVtcG9yYXJ5IDxhPiBlbGVtZW50IGFuZCB0cmlnZ2VyIGRvd25sb2FkCiAgICAgICAgICAgIHZhciBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYScpOwogICAgICAgICAgICBhLmhyZWYgPSB1cmw7CiAgICAgICAgICAgIGEuZG93bmxvYWQgPSAnaW1hZ2UucG5nJzsKICAgICAgICAgICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTsKICAgICAgICAgICAgYS5jbGljaygpOwogICAgICAgICAgICBkb2N1bWVudC5ib2R5LnJlbW92ZUNoaWxkKGEpOwogICAgICAgICAgICBVUkwucmV2b2tlT2JqZWN0VVJMKHVybCk7CiAgICAgICAgfSwgJ2ltYWdlL3BuZycpOwogICAgfSBlbHNlIHsKICAgICAgICBhbGVydCgnTm8gaW1hZ2UgdG8gc2F2ZS4nKTsKICAgIH0",
+					"AQAAAAAAAAABAAAA0AoAAAAAAAC1BwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					6,
+					1,
+					"paste",
+					null,
+					"AgAAAJYHAAAAAAAALQoAAAAAAAAAAAAALQoAAAAAAAAtCgAAAAAAALgCAABmdW5jdGlvbiBzYXZlSW1hZ2UoKSB7IC8vZml4bWUKICAgICAgICBmdW5jdGlvbiBzYXZlSW1hZ2UoKSB7CiAgICAgICAgICAgIGNvbnN0IGltZyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdpbWFnZVRvU2F2ZScpOwogICAgICAgICAgICBjb25zdCBpbWFnZVVybCA9IGltZy5zcmM7CgogICAgICAgICAgICAvLyBDcmVhdGUgYW4gYW5jaG9yIGVsZW1lbnQgYW5kIHNldCB0aGUgZG93bmxvYWQgYXR0cmlidXRlCiAgICAgICAgICAgIGNvbnN0IGxpbmsgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdhJyk7CiAgICAgICAgICAgIGxpbmsuaHJlZiA9IGltYWdlVXJsOwogICAgICAgICAgICBsaW5rLmRvd25sb2FkID0gJ2ltYWdlLnBuZyc7CgogICAgICAgICAgICAvLyBBcHBlbmQgdGhlIGFuY2hvciB0byB0aGUgZG9jdW1lbnQgYm9keSAocmVxdWlyZWQgZm9yIEZpcmVmb3gpCiAgICAgICAgICAgIGRvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQobGluayk7CgogICAgICAgICAgICAvLyBQcm9ncmFtbWF0aWNhbGx5IGNsaWNrIHRoZSBhbmNob3IgdG8gdHJpZ2dlciB0aGUgZG93bmxvYWQKICAgICAgICAgICAgbGluay5jbGljaygpOwoKICAgICAgICAgICAgLy8gUmVtb3ZlIHRoZSBhbmNob3IgZnJvbSB0aGUgZG9jdW1lbnQKICAgICAgICAgICAgZG9jdW1lbnQuYm9keS5yZW1vdmVDaGlsZChsaW5rKTsKICAgICAgICB9Cn0",
+					"AQAAAAAAAAABAAAATgoAAAAAAACWBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					9,
+					2,
+					"unindent",
+					null,
+					"HAAAAJYHAAAAAAAAlgcAAAAAAAAEAAAAICAgILEHAAAAAAAAsQcAAAAAAAAEAAAAICAgIO0HAAAAAAAA7QcAAAAAAAAEAAAAICAgIBAIAAAAAAAAEAgAAAAAAAAEAAAAICAgIFMIAAAAAAAAUwgAAAAAAAAEAAAAICAgIIUIAAAAAAAAhQgAAAAAAAAEAAAAICAgIKMIAAAAAAAAowgAAAAAAAAEAAAAICAgIMkIAAAAAAAAyQgAAAAAAAAEAAAAICAgIBIJAAAAAAAAEgkAAAAAAAAEAAAAICAgIDwJAAAAAAAAPAkAAAAAAAAEAAAAICAgIIEJAAAAAAAAgQkAAAAAAAAEAAAAICAgIJgJAAAAAAAAmAkAAAAAAAAEAAAAICAgIMcJAAAAAAAAxwkAAAAAAAAEAAAAICAgIPAJAAAAAAAA8AkAAAAAAAAEAAAAICAgIJYHAAAAAAAAlgcAAAAAAAAEAAAAICAgIK0HAAAAAAAArQcAAAAAAAAEAAAAICAgIOUHAAAAAAAA5QcAAAAAAAAEAAAAICAgIAQIAAAAAAAABAgAAAAAAAAEAAAAICAgIEMIAAAAAAAAQwgAAAAAAAAEAAAAICAgIHEIAAAAAAAAcQgAAAAAAAAEAAAAICAgIIsIAAAAAAAAiwgAAAAAAAAEAAAAICAgIK0IAAAAAAAArQgAAAAAAAAEAAAAICAgIPIIAAAAAAAA8ggAAAAAAAAEAAAAICAgIBgJAAAAAAAAGAkAAAAAAAAEAAAAICAgIFkJAAAAAAAAWQkAAAAAAAAEAAAAICAgIGwJAAAAAAAAbAkAAAAAAAAEAAAAICAgIJcJAAAAAAAAlwkAAAAAAAAEAAAAICAgILwJAAAAAAAAvAkAAAAAAAAEAAAAICAgIA",
+					"AQAAAAAAAAABAAAALQoAAAAAAACWBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					18,
+					1,
+					"paste",
+					null,
+					"AgAAAJYHAAAAAAAArAoAAAAAAAAAAAAArAoAAAAAAACsCgAAAAAAACgCAABmdW5jdGlvbiBzYXZlSW1hZ2UoKSB7CiAgICBjb25zdCBpbWcgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW1hZ2VUb1NhdmUnKTsKICAgIGNvbnN0IGltYWdlVXJsID0gaW1nLnNyYzsKCiAgICAvLyBDcmVhdGUgYW4gYW5jaG9yIGVsZW1lbnQgYW5kIHNldCB0aGUgZG93bmxvYWQgYXR0cmlidXRlCiAgICBjb25zdCBsaW5rID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYScpOwogICAgbGluay5ocmVmID0gaW1hZ2VVcmw7CiAgICBsaW5rLmRvd25sb2FkID0gJ2ltYWdlLnBuZyc7CgogICAgLy8gQXBwZW5kIHRoZSBhbmNob3IgdG8gdGhlIGRvY3VtZW50IGJvZHkgKHJlcXVpcmVkIGZvciBGaXJlZm94KQogICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChsaW5rKTsKCiAgICAvLyBQcm9ncmFtbWF0aWNhbGx5IGNsaWNrIHRoZSBhbmNob3IgdG8gdHJpZ2dlciB0aGUgZG93bmxvYWQKICAgIGxpbmsuY2xpY2soKTsKCiAgICAvLyBSZW1vdmUgdGhlIGFuY2hvciBmcm9tIHRoZSBkb2N1bWVudAogICAgZG9jdW1lbnQuYm9keS5yZW1vdmVDaGlsZChsaW5rKTsKfQo",
+					"AQAAAAAAAAABAAAAvgkAAAAAAACWBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					21,
+					2,
+					"unindent",
+					null,
+					"IAAAAJYHAAAAAAAAlgcAAAAAAAAEAAAAICAgILEHAAAAAAAAsQcAAAAAAAAEAAAAICAgIO0HAAAAAAAA7QcAAAAAAAAEAAAAICAgIC8IAAAAAAAALwgAAAAAAAAEAAAAICAgIGQIAAAAAAAAZAgAAAAAAAAEAAAAICAgIIcIAAAAAAAAhwgAAAAAAAAEAAAAICAgIMoIAAAAAAAAyggAAAAAAAAEAAAAICAgIPwIAAAAAAAA/AgAAAAAAAAEAAAAICAgIBoJAAAAAAAAGgkAAAAAAAAEAAAAICAgIEAJAAAAAAAAQAkAAAAAAAAEAAAAICAgIIkJAAAAAAAAiQkAAAAAAAAEAAAAICAgILMJAAAAAAAAswkAAAAAAAAEAAAAICAgIPgJAAAAAAAA+AkAAAAAAAAEAAAAICAgIA8KAAAAAAAADwoAAAAAAAAEAAAAICAgID4KAAAAAAAAPgoAAAAAAAAEAAAAICAgIGcKAAAAAAAAZwoAAAAAAAAEAAAAICAgIJYHAAAAAAAAlgcAAAAAAAAEAAAAICAgIK0HAAAAAAAArQcAAAAAAAAEAAAAICAgIOUHAAAAAAAA5QcAAAAAAAAEAAAAICAgICMIAAAAAAAAIwgAAAAAAAAEAAAAICAgIFQIAAAAAAAAVAgAAAAAAAAEAAAAICAgIHMIAAAAAAAAcwgAAAAAAAAEAAAAICAgILIIAAAAAAAAsggAAAAAAAAEAAAAICAgIOAIAAAAAAAA4AgAAAAAAAAEAAAAICAgIPoIAAAAAAAA+ggAAAAAAAAEAAAAICAgIBwJAAAAAAAAHAkAAAAAAAAEAAAAICAgIGEJAAAAAAAAYQkAAAAAAAAEAAAAICAgIIcJAAAAAAAAhwkAAAAAAAAEAAAAICAgIMgJAAAAAAAAyAkAAAAAAAAEAAAAICAgINsJAAAAAAAA2wkAAAAAAAAEAAAAICAgIAYKAAAAAAAABgoAAAAAAAAEAAAAICAgICsKAAAAAAAAKwoAAAAAAAAEAAAAICAgIA",
+					"AQAAAAAAAAABAAAArAoAAAAAAACWBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					23,
+					1,
+					"insert",
+					{
+						"characters": "\n\n"
+					},
+					"AgAAACwKAAAAAAAALQoAAAAAAAAAAAAALQoAAAAAAAAuCgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAALAoAAAAAAAAsCgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					32,
+					1,
+					"paste",
+					null,
+					"AgAAAJYHAAAAAAAAaQoAAAAAAAAAAAAAaQoAAAAAAABpCgAAAAAAAJYCAABmdW5jdGlvbiBzYXZlSW1hZ2UoKSB7CiAgICAvLyBTZWxlY3QgdGhlIGZpcnN0IGltYWdlIGluc2lkZSB0aGUgaW1nV3JhcHBlciBkaXYKICAgIGNvbnN0IGltZ1dyYXBwZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW1nV3JhcHBlcicpOwogICAgY29uc3QgaW1nID0gaW1nV3JhcHBlci5xdWVyeVNlbGVjdG9yKCdpbWcnKTsKICAgIGNvbnN0IGltYWdlVXJsID0gaW1nLnNyYzsKCiAgICAvLyBDcmVhdGUgYW4gYW5jaG9yIGVsZW1lbnQgYW5kIHNldCB0aGUgZG93bmxvYWQgYXR0cmlidXRlCiAgICBjb25zdCBsaW5rID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYScpOwogICAgbGluay5ocmVmID0gaW1hZ2VVcmw7CiAgICBsaW5rLmRvd25sb2FkID0gJ2ltYWdlLnBuZyc7CgogICAgLy8gQXBwZW5kIHRoZSBhbmNob3IgdG8gdGhlIGRvY3VtZW50IGJvZHkgKHJlcXVpcmVkIGZvciBGaXJlZm94KQogICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChsaW5rKTsKCiAgICAvLyBQcm9ncmFtbWF0aWNhbGx5IGNsaWNrIHRoZSBhbmNob3IgdG8gdHJpZ2dlciB0aGUgZG93bmxvYWQKICAgIGxpbmsuY2xpY2soKTsKCiAgICAvLyBSZW1vdmUgdGhlIGFuY2hvciBmcm9tIHRoZSBkb2N1bWVudAogICAgZG9jdW1lbnQuYm9keS5yZW1vdmVDaGlsZChsaW5rKTsKfQ",
+					"AQAAAAAAAAABAAAALAoAAAAAAACWBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					41,
+					1,
+					"insert",
+					{
+						"characters": "screentone"
+					},
+					"CwAAAA8JAAAAAAAAEAkAAAAAAAAAAAAAEAkAAAAAAAAQCQAAAAAAAAUAAABpbWFnZRAJAAAAAAAAEQkAAAAAAAAAAAAAEQkAAAAAAAASCQAAAAAAAAAAAAASCQAAAAAAABMJAAAAAAAAAAAAABMJAAAAAAAAFAkAAAAAAAAAAAAAFAkAAAAAAAAVCQAAAAAAAAAAAAAVCQAAAAAAABYJAAAAAAAAAAAAABYJAAAAAAAAFwkAAAAAAAAAAAAAFwkAAAAAAAAYCQAAAAAAAAAAAAAYCQAAAAAAABkJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAADwkAAAAAAAAUCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					55,
+					1,
+					"paste",
+					null,
+					"AgAAAJYHAAAAAAAAsQkAAAAAAAAAAAAAsQkAAAAAAACxCQAAAAAAANgCAABmdW5jdGlvbiBzYXZlSW1hZ2UoKSB7CiAgICAvLyBTZWxlY3QgdGhlIGZpcnN0IGltYWdlIGluc2lkZSB0aGUgaW1nV3JhcHBlciBkaXYKICAgIGNvbnN0IGltZ1dyYXBwZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW1nV3JhcHBlcicpOwogICAgY29uc3QgaW1nID0gaW1nV3JhcHBlci5xdWVyeVNlbGVjdG9yKCdpbWcnKTsKICAgIGNvbnN0IGltYWdlVXJsID0gaW1nLnNyYzsKCiAgICAvLyBDcmVhdGUgYW4gYW5jaG9yIGVsZW1lbnQgYW5kIHNldCB0aGUgZG93bmxvYWQgYXR0cmlidXRlCiAgICBjb25zdCBsaW5rID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYScpOwogICAgbGluay5ocmVmID0gaW1hZ2VVcmw7CiAgICBsaW5rLmRvd25sb2FkID0gJ3NjcmVlbnRvbmUucG5nJzsgLy8gVGhpcyB3aWxsIHN1Z2dlc3QgYSBmaWxlIG5hbWUsIGJ1dCB0aGUgdXNlciBjYW4gY2hhbmdlIGl0CgogICAgLy8gQXBwZW5kIHRoZSBhbmNob3IgdG8gdGhlIGRvY3VtZW50IGJvZHkgKHJlcXVpcmVkIGZvciBGaXJlZm94KQogICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChsaW5rKTsKCiAgICAvLyBQcm9ncmFtbWF0aWNhbGx5IGNsaWNrIHRoZSBhbmNob3IgdG8gdHJpZ2dlciB0aGUgZG93bmxvYWQKICAgIGxpbmsuY2xpY2soKTsKCiAgICAvLyBSZW1vdmUgdGhlIGFuY2hvciBmcm9tIHRoZSBkb2N1bWVudAogICAgZG9jdW1lbnQuYm9keS5yZW1vdmVDaGlsZChsaW5rKTsKfQ",
+					"AQAAAAAAAAABAAAAbgoAAAAAAACWBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					58,
+					1,
+					"paste",
+					null,
+					"AgAAAJYHAAAAAAAAJwsAAAAAAAAAAAAAJwsAAAAAAAAnCwAAAAAAABsCAABmdW5jdGlvbiBzYXZlSW1hZ2UoKSB7CiAgICAvLyBTZWxlY3QgdGhlIGZpcnN0IGltYWdlIGluc2lkZSB0aGUgaW1nV3JhcHBlciBkaXYKICAgIGNvbnN0IGltZ1dyYXBwZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW1nV3JhcHBlcicpOwogICAgY29uc3QgaW1nID0gaW1nV3JhcHBlci5xdWVyeVNlbGVjdG9yKCdpbWcnKTsKICAgIGNvbnN0IGltYWdlVXJsID0gaW1nLnNyYzsKCiAgICAvLyBDcmVhdGUgYW4gYW5jaG9yIGVsZW1lbnQgYW5kIHNldCB0aGUgZG93bmxvYWQgYXR0cmlidXRlCiAgICBjb25zdCBsaW5rID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnYScpOwogICAgbGluay5ocmVmID0gaW1hZ2VVcmw7CiAgICBsaW5rLnNldEF0dHJpYnV0ZSgnZG93bmxvYWQnLCAnaW1hZ2UucG5nJyk7IC8vIFRoaXMgd2lsbCBzdWdnZXN0IGEgZmlsZSBuYW1lLCBidXQgdGhlIHVzZXIgY2FuIGNoYW5nZSBpdAoKICAgIC8vIFRyaWdnZXIgdGhlIHNhdmUgZGlhbG9nIGJ5IGNsaWNraW5nIHRoZSBhbmNob3IKICAgIGxpbmsuY2xpY2soKTsKfQ",
+					"AQAAAAAAAAABAAAAsQkAAAAAAACWBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					64,
+					1,
+					"unindent",
+					null,
+					"FwAAAK0HAAAAAAAArQcAAAAAAAACAAAAICDaBwAAAAAAANoHAAAAAAAAAgAAACAgJQgAAAAAAAAlCAAAAAAAAAIAAAAgID4IAAAAAAAAPggAAAAAAAACAAAAICBMCAAAAAAAAEwIAAAAAAAABAAAACAgICB8CAAAAAAAAHwIAAAAAAAABAAAACAgICCECAAAAAAAAIQIAAAAAAAAAgAAACAghwgAAAAAAACHCAAAAAAAAAIAAAAgIKwIAAAAAAAArAgAAAAAAAACAAAAICDdCAAAAAAAAN0IAAAAAAAAAgAAACAgBwkAAAAAAAAHCQAAAAAAAAIAAAAgIDMJAAAAAAAAMwkAAAAAAAACAAAAICBPCQAAAAAAAE8JAAAAAAAAAgAAACAgbgkAAAAAAABuCQAAAAAAAAIAAAAgIJAJAAAAAAAAkAkAAAAAAAACAAAAICCxCQAAAAAAALEJAAAAAAAAAgAAACAg7AkAAAAAAADsCQAAAAAAAAIAAAAgIBwKAAAAAAAAHAoAAAAAAAACAAAAICBLCgAAAAAAAEsKAAAAAAAAAgAAACAgdQoAAAAAAAB1CgAAAAAAAAIAAAAgIIoKAAAAAAAAigoAAAAAAAACAAAAICC8CgAAAAAAALwKAAAAAAAAAgAAACAg5goAAAAAAADmCgAAAAAAAAIAAAAgIA",
+					"AQAAAAAAAAABAAAAJQsAAAAAAACtBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					65,
+					1,
+					"indent",
+					null,
+					"FwAAAK0HAAAAAAAArgcAAAAAAAAAAAAA2wcAAAAAAADcBwAAAAAAAAAAAAAnCAAAAAAAACgIAAAAAAAAAAAAAEEIAAAAAAAAQggAAAAAAAAAAAAAUAgAAAAAAABRCAAAAAAAAAAAAACBCAAAAAAAAIIIAAAAAAAAAAAAAIoIAAAAAAAAiwgAAAAAAAAAAAAAjggAAAAAAACPCAAAAAAAAAAAAAC0CAAAAAAAALUIAAAAAAAAAAAAAOYIAAAAAAAA5wgAAAAAAAAAAAAAEQkAAAAAAAASCQAAAAAAAAAAAAA+CQAAAAAAAD8JAAAAAAAAAAAAAFsJAAAAAAAAXAkAAAAAAAAAAAAAewkAAAAAAAB8CQAAAAAAAAAAAACeCQAAAAAAAJ8JAAAAAAAAAAAAAMAJAAAAAAAAwQkAAAAAAAAAAAAA/AkAAAAAAAD9CQAAAAAAAAAAAAAtCgAAAAAAAC4KAAAAAAAAAAAAAF0KAAAAAAAAXgoAAAAAAAAAAAAAiAoAAAAAAACJCgAAAAAAAAAAAACeCgAAAAAAAJ8KAAAAAAAAAAAAANEKAAAAAAAA0goAAAAAAAAAAAAA/AoAAAAAAAD9CgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA8woAAAAAAACtBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					69,
+					1,
+					"paste",
+					null,
+					"AgAAAJYHAAAAAAAArgoAAAAAAAAAAAAArgoAAAAAAACuCgAAAAAAAHYDAABmdW5jdGlvbiBzYXZlSW1hZ2UoKSB7CgkvLyBHZXQgdGhlIGltYWdlIGVsZW1lbnQgZnJvbSB0aGUgaW1nV3JhcHBlcgoJY29uc3QgaW1hZ2UgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiaW1nV3JhcHBlciIpLnF1ZXJ5U2VsZWN0b3IoImltZyIpOwoKCS8vIENoZWNrIGlmIGltYWdlIGV4aXN0cwoJaWYgKCFpbWFnZSkgewoJY29uc29sZS5lcnJvcigiTm8gaW1hZ2UgZm91bmQgaW4gI2ltZ1dyYXBwZXIiKTsKCXJldHVybjsKCX0KCgkvLyBDcmVhdGUgYSB0ZW1wb3JhcnkgY2FudmFzIGVsZW1lbnQKCWNvbnN0IGNhbnZhcyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoImNhbnZhcyIpOwoJY29uc3QgY29udGV4dCA9IGNhbnZhcy5nZXRDb250ZXh0KCIyZCIpOwoKCS8vIFNldCBjYW52YXMgZGltZW5zaW9ucyB0byBtYXRjaCB0aGUgaW1hZ2UKCWNhbnZhcy53aWR0aCA9IGltYWdlLndpZHRoOwoJY2FudmFzLmhlaWdodCA9IGltYWdlLmhlaWdodDsKCgkvLyBEcmF3IHRoZSBpbWFnZSBvbnRvIHRoZSBjYW52YXMKCWNvbnRleHQuZHJhd0ltYWdlKGltYWdlLCAwLCAwKTsKCgkvLyBFbmNvZGUgdGhlIGNhbnZhcyBjb250ZW50IGFzIGEgZGF0YSBVUkwgd2l0aCBQTkcgZm9ybWF0Cgljb25zdCBkYXRhVVJMID0gY2FudmFzLnRvRGF0YVVSTCgiaW1hZ2UvcG5nIik7CgoJLy8gQ3JlYXRlIGEgdGVtcG9yYXJ5IGxpbmsgZWxlbWVudCAoaW52aXNpYmxlKQoJY29uc3QgbGluayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoImEiKTsKCWxpbmsuaHJlZiA9IGRhdGFVUkw7CglsaW5rLmRvd25sb2FkID0gImltYWdlLnBuZyI7IC8vIERlZmF1bHQgZmlsZW5hbWUKCgkvLyBUcmlnZ2VyIHRoZSBicm93c2VyJ3MgIlNhdmUgQXMiIGRpYWxvZwoJbGluay5jbGljaygpOwp9",
+					"AQAAAAAAAAABAAAADAsAAAAAAACWBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					76,
+					2,
+					"right_delete",
+					null,
+					"AgAAAK0HAAAAAAAArQcAAAAAAAAuAAAAICAvLyBHZXQgdGhlIGltYWdlIGVsZW1lbnQgZnJvbSB0aGUgaW1nV3JhcHBlcq0HAAAAAAAArQcAAAAAAAABAAAACg",
+					"AQAAAAAAAAABAAAA2wcAAAAAAACtBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					79,
+					2,
+					"right_delete",
+					null,
+					"AgAAAPoHAAAAAAAA+gcAAAAAAAAaAAAAICAvLyBDaGVjayBpZiBpbWFnZSBleGlzdHP6BwAAAAAAAPoHAAAAAAAAAQAAAAo",
+					"AQAAAAAAAAABAAAAFAgAAAAAAAD6BwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					82,
+					2,
+					"right_delete",
+					null,
+					"AgAAAE8IAAAAAAAATwgAAAAAAABVAAAAICAvLyBFbmNvZGUgdGhlIGltYWdlIHNvdXJjZSBVUkwgYXMgYSBkYXRhIFVSTCB3aXRoIFBORyBmb3JtYXQgKGFsdGVybmF0aXZlIGFwcHJvYWNoKU8IAAAAAAAATwgAAAAAAAABAAAACg",
+					"AQAAAAAAAAABAAAApAgAAAAAAABPCAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					85,
+					1,
+					"right_delete",
+					null,
+					"AQAAAJYIAAAAAAAAlggAAAAAAAAaAAAAIC8vIFJlbW92ZSBkYXRhIFVSTCBwcmVmaXg",
+					"AQAAAAAAAAABAAAAsAgAAAAAAACWCAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					88,
+					2,
+					"right_delete",
+					null,
+					"AgAAANcIAAAAAAAA1wgAAAAAAAAwAAAAICAvLyBDcmVhdGUgYSB0ZW1wb3JhcnkgbGluayBlbGVtZW50IChpbnZpc2libGUp1wgAAAAAAADXCAAAAAAAAAEAAAAK",
+					"AQAAAAAAAAABAAAABwkAAAAAAADXCAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					91,
+					1,
+					"right_delete",
+					null,
+					"AQAAAEIJAAAAAAAAQgkAAAAAAAATAAAALy8gRGVmYXVsdCBmaWxlbmFtZQ",
+					"AQAAAAAAAAABAAAAVQkAAAAAAABCCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					96,
+					1,
+					"insert",
+					{
+						"characters": "screentone"
+					},
+					"CwAAADYJAAAAAAAANwkAAAAAAAAAAAAANwkAAAAAAAA3CQAAAAAAAAUAAABpbWFnZTcJAAAAAAAAOAkAAAAAAAAAAAAAOAkAAAAAAAA5CQAAAAAAAAAAAAA5CQAAAAAAADoJAAAAAAAAAAAAADoJAAAAAAAAOwkAAAAAAAAAAAAAOwkAAAAAAAA8CQAAAAAAAAAAAAA8CQAAAAAAAD0JAAAAAAAAAAAAAD0JAAAAAAAAPgkAAAAAAAAAAAAAPgkAAAAAAAA/CQAAAAAAAAAAAAA/CQAAAAAAAEAJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAANgkAAAAAAAA7CQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					99,
+					2,
+					"right_delete",
+					null,
+					"AgAAAEkJAAAAAAAASQkAAAAAAAA7AAAAICAvLyBTaW11bGF0ZSBhIGNsaWNrIGV2ZW50IHRvIHRyaWdnZXIgdGhlICJTYXZlIEFzIiBkaWFsb2dJCQAAAAAAAEkJAAAAAAAAAQAAAAo",
+					"AQAAAAAAAAABAAAAhAkAAAAAAABJCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					104,
+					1,
+					"indent",
+					null,
+					"CwAAAK0HAAAAAAAArgcAAAAAAAAAAAAA+wcAAAAAAAD8BwAAAAAAAAAAAAAMCAAAAAAAAA0IAAAAAAAAAAAAAEEIAAAAAAAAQggAAAAAAAAAAAAATggAAAAAAABPCAAAAAAAAAAAAABUCAAAAAAAAFUIAAAAAAAAAAAAAJ0IAAAAAAAAnggAAAAAAAAAAAAA3ggAAAAAAADfCAAAAAAAAAAAAAALCQAAAAAAAAwJAAAAAAAAAAAAACwJAAAAAAAALQkAAAAAAAAAAAAAUwkAAAAAAABUCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAdwkAAAAAAACtBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					105,
+					2,
+					"unindent",
+					null,
+					"FgAAAK0HAAAAAAAArQcAAAAAAAABAAAACfoHAAAAAAAA+gcAAAAAAAABAAAACQoIAAAAAAAACggAAAAAAAABAAAACT4IAAAAAAAAPggAAAAAAAABAAAACUoIAAAAAAAASggAAAAAAAABAAAACU8IAAAAAAAATwgAAAAAAAABAAAACZcIAAAAAAAAlwgAAAAAAAABAAAACdcIAAAAAAAA1wgAAAAAAAABAAAACQMJAAAAAAAAAwkAAAAAAAABAAAACSMJAAAAAAAAIwkAAAAAAAABAAAACUkJAAAAAAAASQkAAAAAAAABAAAACa0HAAAAAAAArQcAAAAAAAACAAAAICD4BwAAAAAAAPgHAAAAAAAAAgAAACAgBggAAAAAAAAGCAAAAAAAAAQAAAAgICAgNggAAAAAAAA2CAAAAAAAAAQAAAAgICAgPggAAAAAAAA+CAAAAAAAAAIAAAAgIEEIAAAAAAAAQQgAAAAAAAACAAAAICCHCAAAAAAAAIcIAAAAAAAAAgAAACAgxQgAAAAAAADFCAAAAAAAAAIAAAAgIO8IAAAAAAAA7wgAAAAAAAACAAAAICANCQAAAAAAAA0JAAAAAAAAAgAAACAgMQkAAAAAAAAxCQAAAAAAAAIAAAAgIA",
+					"AQAAAAAAAAABAAAArQcAAAAAAACCCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					106,
+					1,
+					"indent",
+					null,
+					"CwAAAK0HAAAAAAAArgcAAAAAAAAAAAAA+QcAAAAAAAD6BwAAAAAAAAAAAAAICAAAAAAAAAkIAAAAAAAAAAAAADkIAAAAAAAAOggAAAAAAAAAAAAAQggAAAAAAABDCAAAAAAAAAAAAABGCAAAAAAAAEcIAAAAAAAAAAAAAI0IAAAAAAAAjggAAAAAAAAAAAAAzAgAAAAAAADNCAAAAAAAAAAAAAD3CAAAAAAAAPgIAAAAAAAAAAAAABYJAAAAAAAAFwkAAAAAAAAAAAAAOwkAAAAAAAA8CQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAArQcAAAAAAABdCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					115,
+					1,
+					"replace_all",
+					{
+						"close_panel": true
+					},
+					"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"
+				]
+			]
+		},
+		{
+			"file": "screentone.js",
+			"settings":
+			{
+				"buffer_size": 4828,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+			]
+		},
+		{
+			"file": "styles.css",
+			"settings":
+			{
+				"buffer_size": 102,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Install Package Control",
+				"Package Control: Install Package"
+			],
+			[
+				"pastr",
+				"Text Pastry: From 1 To X"
+			],
+			[
+				"range",
+				"Text Pastry: Range (numeric)"
+			],
+			[
+				"sort",
+				"SortBy: Alphabetically (Descending)"
+			],
+			[
+				"installe",
+				"Package Control: Install Package"
+			],
+			[
+				"from",
+				"Text Pastry: From 1 To X"
+			],
+			[
+				"pastry fro",
+				"Text Pastry: From 0 To X"
+			],
+			[
+				"Install Pa",
+				"Package Control: Install Package"
+			],
+			[
+				"Install Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 154.0,
+		"history":
+		[
+			"git",
+			"view.settings().get(\"translate_tabs_to_spaces\")",
+			"view.encoding()",
+			"Install Package Control"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/gonya/Desktop/screentone-generator/screentone-generator.sublime-project",
+		"/C/Users/gonya/Desktop/screentone-generator/screentone-generator.sublime-workspace",
+		"/C/Users/gonya/Desktop/screentone-generator/styles.css",
+		"/C/Users/gonya/Desktop/screentone-generator/screentone.js",
+		"/C/Users/gonya/Desktop/screentone-generator/interface.js",
+		"/C/Users/gonya/Desktop/screentone-generator/index.html",
+		"/C/Users/gonya/Desktop/New Text Document.txt",
+		"/C/Users/gonya/Desktop/213-215 [Final].txt",
+		"/C/Users/gonya/Desktop/Screentone generator/index.html",
+		"/C/Users/gonya/Desktop/pi_zt_coords.mat",
+		"/C/Users/gonya/Desktop/patterns.matlab",
+		"/C/Users/gonya/Desktop/Big Prize/105-126/105-126 SFX.txt",
+		"/C/Users/gonya/Desktop/patterns.m",
+		"/C/Users/gonya/Desktop/175-192 BOOK/175-192 [Final].txt",
+		"/C/Users/gonya/Desktop/193-212 BOOK/193-212 [Final].txt",
+		"/C/Users/gonya/Desktop/103-120 BOOK/103-120 [Final].txt",
+		"/C/Users/gonya/Desktop/121-138 BOOK/121-138 [Final].txt",
+		"/C/Users/gonya/Desktop/139-158 BOOK/139-158 [Final].txt",
+		"/C/Users/gonya/Desktop/159-174 BOOK/159-174 [Final].txt",
+		"/C/Users/gonya/Desktop/009-026 BOOK/009-026 [Final].txt",
+		"/C/Users/gonya/Desktop/003-008 BOOK/003-008 [Final].txt",
+		"/C/Users/gonya/Desktop/045-062 BOOK/045-062 [Final].txt",
+		"/C/Users/gonya/Desktop/063-082 BOOK/063-082 [Final].txt",
+		"/C/Users/gonya/Desktop/083-102 BOOK/083-102 [Final].txt",
+		"/C/Users/gonya/Desktop/027-044 [Final].txt",
+		"/C/Users/gonya/Desktop/photoshop screentone calculator/experimental/test.html",
+		"/C/Users/gonya/Desktop/Curso lettering/Section 3 materials/SFX Challenge 2/SFX Challenge 2.txt",
+		"/C/Users/gonya/Desktop/Big Prize/081-104/081-104 SFX.txt",
+		"/C/Users/gonya/Desktop/aaa/SFX Challenge 2.txt",
+		"/C/Users/gonya/Desktop/original screentones.html",
+		"/C/Users/gonya/AppData/Roaming/Sublime Text/Packages/User/openinbrowser.sublime-settings",
+		"/C/Users/gonya/Desktop/photoshop screentone calculator/index.html",
+		"/C/Users/gonya/AppData/Roaming/Sublime Text/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/gonya/Desktop/photoshop screentone calculator/experimental/screentoneGen.html",
+		"/C/Users/gonya/Desktop/Curso lettering/Section 4 materials/BW pages/Retouch Challenge.txt",
+		"/C/Users/gonya/Desktop/photoshop screentone calculator/assets/css/main.css",
+		"/C/Users/gonya/Desktop/Big Prize/001-022/001-022 SFX.txt",
+		"/C/Users/gonya/Desktop/Big Prize/023-042/023-042 SFX.txt",
+		"/C/Users/gonya/Desktop/Big Prize/043-058/043-058 SFX.txt",
+		"/C/Users/gonya/Desktop/Big Prize/043-058/043-058 [Final].txt",
+		"/C/Users/gonya/Desktop/Big Prize/059-080/059-080 SFX.txt",
+		"/C/Users/gonya/Desktop/photoshop screentone calculator/experimental/index.html",
+		"/C/Users/gonya/Desktop/aaaa.html",
+		"/H/atmosphere/config/stratosphere.ini",
+		"/C/Users/gonya/Desktop/001-022 SFX.txt",
+		"/C/Users/gonya/AppData/Local/Temp/7zO473F6EF3/index.html",
+		"/C/Users/gonya/Desktop/autorizacion.LOG",
+		"/C/Users/gonya/Desktop/photoshop screentone calculator/assets/css/fontawesome-all.min.css",
+		"/C/Users/gonya/Desktop/index.html",
+		"/C/Users/gonya/Desktop/BV1610p.57_76_きょくちょ（Maiden Breed）/057-076 (Kyockcho) [Final].txt",
+		"/C/Users/gonya/Desktop/BV1510p39_64_美矢火（快感旅行）/039-064 (Miyabi) [Final].txt",
+		"/C/Users/gonya/Desktop/057-076 (Kyockcho) [Final].txt",
+		"/C/Users/gonya/Desktop/pixelpalette.html",
+		"/C/Users/gonya/Desktop/Using typefaces for SFX (simple and advanced).txt",
+		"/C/Users/gonya/Desktop/139-158 (Neko@ruko) [Final].txt",
+		"/C/Users/gonya/Desktop/Challenge - Replicate these SFX using typefaces. Practice both subbing and replacing/Challenge - Replicate these SFX using typefaces. Practice both subbing and replacing.txt",
+		"/C/Users/gonya/Desktop/index - Copy.html",
+		"/C/Users/gonya/Desktop/BV1512p.139_158_ねこ＠るこ（強引ランドリー）/139-158 (Neko@ruko) [Chris].txt",
+		"/C/Users/gonya/Desktop/0Iw2tVqA14nQeL2R.gpl",
+		"/C/Users/gonya/Desktop/Diano-16.gpl",
+		"/C/Users/gonya/Desktop/BV1512p.263_286_ichiro(ともだち)/263-286 (ichiro) [Final].txt",
+		"/C/Users/gonya/Desktop/fghj.aseprite",
+		"/D/Torrent Downloads/Adobe Illustrator 2023 v27.8.1.268 (x64) + Fix/Instructions! .txt",
+		"/C/Users/gonya/Desktop/BV1512p.63_92_美矢火（恋は盲目♥）/063-092 (Miyabi) [Final].txt",
+		"/C/Users/gonya/Desktop/053-060_ぱてくらー_8/053-060 (Particular) [Final].txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/216/216 TL.txt",
+		"/C/Users/gonya/Desktop/BV1609p.349_368_伴カズヤス（快姦マッサージ）/[Bavel 09-16] 349-368 (Ban Kazuyasu) [Final].txt",
+		"/C/Users/gonya/Desktop/Kairakuten 2024-07 Cover.txt",
+		"/C/Users/gonya/Desktop/Veo que varias de tus aficiones orbitan alrededor",
+		"/C/Users/gonya/Desktop/033-038_ぱてくらー_6/033-038 (Particular) [Final].txt",
+		"/C/Users/gonya/AppData/Roaming/Adobe/InDesign/Version 19.0/en_US/Scripts/Scripts Panel/to_italics.jsx",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/001-002/001-002 TL.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/121-138/121-138 SFX.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/103-120/103-120 SFX.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/083-102/083-102 [Final].txt",
+		"/C/Users/gonya/AppData/Roaming/Adobe/InDesign/Version 19.0/en_US/Scripts/Scripts Panel/fdfToIndesing.jsx",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/063-082/063-082 [Final].txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/045-062/045-062 [Final].txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/027-044/027-044 [Final].txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/009-026/009-026 [Final].txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/003-008/003-008 [Final].txt",
+		"/C/Users/gonya/AppData/Roaming/Adobe/InDesign/Version 19.0/en_US/Scripts/Scripts Panel/autoTranslator.jsx",
+		"/C/Users/gonya/Desktop/BV1612p.175_192_橋広こう（ぷり-ずてぃ-ちみ～）/175-192 (Hashibiro Kou) [Final].txt",
+		"/C/Users/gonya/Desktop/BV1612p.387_390_broiler(かてきょ妄想)/387-390 (broiler) [Final].txt",
+		"/C/Users/gonya/AppData/Roaming/Adobe/InDesign/Version 19.0/en_US/Scripts/Scripts Panel/Columnize.jsx",
+		"/C/Users/gonya/Desktop/Al final me he liado y lo he escrito a mi manera,",
+		"/C/Users/gonya/Desktop/ichika titles",
+		"/C/Users/gonya/Desktop/187-210 (Nishizawa Mizuki) [Final].txt",
+		"/C/Users/gonya/Desktop/快楽天06_187-210_西沢みずき/187-210 (Nishizawa Mizuki) [Final].txt",
+		"/C/Users/gonya/Desktop/快楽天06_113-136_日吉ハナ/113-136 (Hiyoshi Hana) [Final].txt",
+		"/C/Users/gonya/Desktop/MAGS-10457 backlog BV1608p.243_262_加賀あくる(君の部屋で…)/243-262 (Kaga Akuru) [Final].txt",
+		"/C/Users/gonya/Desktop/031-050 Dascomi 30  [Hoyhoy Colo]/031-050 (Hoyhoy Colo) [Final].txt",
+		"/C/Users/gonya/Desktop/快楽天05_111-122_松河/111-122 (Matsukawa) [Final].txt",
+		"/C/Users/gonya/Desktop/001-020_えーすけ_20/001-020 [Esuke] [Final].txt",
+		"/C/Users/gonya/Desktop/Temas/Proyectos random/ai/realisticpics.txt",
+		"/C/Users/gonya/Desktop/melonbooks",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/027-044/027-044 SFX.txt",
+		"/C/Users/gonya/Desktop/Temas/Proyectos random/ai/create.txt",
+		"/C/Users/gonya/Desktop/Temas/Proyectos random/ai/info stable diffusion.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/139-158 (-------/139-158 SFX.txt",
+		"/C/Users/gonya/Desktop/Kairakuten 2024-06 Cover.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/193-212 (---/193-212 SFX.txt",
+		"/C/Users/gonya/Desktop/193-212 [Final].txt",
+		"/C/Users/gonya/Desktop/current/Backlog 快楽天02_365-388_百済児廿日/365-388 (Kudaraji Hatsuka) [Final].txt",
+		"/C/Users/gonya/Desktop/バベル05_095-118_そら豆さん/095-118 (Soramame-san) [Final].txt",
+		"/C/Users/gonya/Desktop/バベル05_095-118_そら豆さん/095-118 (Soramame-san).txt",
+		"/C/Users/gonya/AppData/Local/Temp/7zO4B6B70FF/readme.txt",
+		"/C/Users/gonya/Desktop/175-192 [Final].txt",
+		"/C/Users/gonya/Desktop/159-174 [Final].txt",
+		"/C/Users/gonya/Desktop/139-158 [Final].txt",
+		"/C/Users/gonya/Desktop/121-138 [Final].txt",
+		"/C/Users/gonya/Desktop/103-120 [Final].txt",
+		"/C/Users/gonya/Desktop/Temas/Proyectos random/ai/panchira project.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/175-192 (---/175-192 SFX.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/159-174 (----/159-174 SFX.txt",
+		"/C/Users/gonya/Desktop/083-102 SFX.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/103-120  (---/103-120 SFX.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/121-138  (---/121-138 SFX.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/063-082 (----/063-082 SFX.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/003-008/003-008 SFX.txt",
+		"/C/Users/gonya/Desktop/Temas/Modelados 3d/cosas blender.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/045-062 (--/045-062 BOOK/045-062 SFX.txt",
+		"/C/Users/gonya/Desktop/Iro wa Nioedo/009-026/009-026 SFX.txt",
+		"/C/Users/gonya/Desktop/34",
+		"/C/Users/gonya/Desktop/X-EROS_109_163-186_ます_24/163-186 (Masu) [Final].txt",
+		"/C/Users/gonya/Desktop/バベル05_499-502_かんむり/499-502 [Kanmuri] [Final].txt",
+		"/C/Users/gonya/AppData/Local/Temp/7zO4FAC8D20/README.txt",
+		"/C/Users/gonya/Desktop/Cover/Kairakuten 2024-05 Cover.txt"
+	],
+	"find":
+	{
+		"height": 39.3333333333
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"    "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\t",
+			"\\y"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10538,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8310,
+								8686
+							]
+						],
+						"settings":
+						{
+							"rainbow_checked": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2430.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "interface.js",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4974,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1574,
+								1574
+							]
+						],
+						"settings":
+						{
+							"rainbow_checked": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 486.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "screentone.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								330,
+								330
+							]
+						],
+						"settings":
+						{
+							"rainbow_checked": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 102,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"rainbow_checked": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.3333333333
+	},
+	"input":
+	{
+		"height": 97.6
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "screentone-generator.sublime-project",
+	"replace":
+	{
+		"height": 70.6666666667
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 323.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 563.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 233.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

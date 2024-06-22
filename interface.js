@@ -1,122 +1,115 @@
 function syncSliderText(whichOne) {
-    var sliderName = whichOne + "Slider";
-    var textName = whichOne + "Text";
-    const slider = document.getElementById(sliderName);
-    const text = document.getElementById(textName);
-    text.value = slider.value;
+	var sliderName = whichOne + "Slider";
+	var textName = whichOne + "Text";
+	const slider = document.getElementById(sliderName);
+	const text = document.getElementById(textName);
+	text.value = slider.value;
 }
 
 function syncTextSlider(whichOne) {
-    var sliderName = whichOne + "Slider";
-    var textName = whichOne + "Text";
-    const slider = document.getElementById(sliderName);
-    const text = document.getElementById(textName);
-    if ((text.value < 2) && (whichOne == "size")) text.value = 2;
-    if (text.value > 100) text.value = 100;
-    slider.value = text.value;
+	var sliderName = whichOne + "Slider";
+	var textName = whichOne + "Text";
+	const slider = document.getElementById(sliderName);
+	const text = document.getElementById(textName);
+	if ((text.value < 2) && (whichOne == "size")) text.value = 2;
+	if (text.value > 100) text.value = 100;
+	slider.value = text.value;
 }
 
 function handleColorChange(picker) {
-    const grayscaleColor = toGrayscale(picker.value);
-    picker.value = grayscaleColor;
-    refresh();
+	const grayscaleColor = toGrayscale(picker.value);
+	picker.value = grayscaleColor;
+	refresh();
 }
 
 function toGrayscale(hex) {
-    const r = parseInt(hex.substr(1, 2), 16);
-    const g = parseInt(hex.substr(3, 2), 16);
-    const b = parseInt(hex.substr(5, 2), 16);
-    const avg = Math.round((r + g + b) / 3);
-    const grayHex = avg.toString(16).padStart(2, '0');
-    return `#${grayHex}${grayHex}${grayHex}`;
+	const r = parseInt(hex.substr(1, 2), 16);
+	const g = parseInt(hex.substr(3, 2), 16);
+	const b = parseInt(hex.substr(5, 2), 16);
+	const avg = Math.round((r + g + b) / 3);
+	const grayHex = avg.toString(16).padStart(2, '0');
+	return `#${grayHex}${grayHex}${grayHex}`;
 }
 
 function copyToClipboard() {
-    var img = document.getElementById('imgWrapper').getElementsByTagName('img')[0];
-    if (img) {
-        var canvas = document.createElement('canvas');
-        canvas.width = img.width;
-        canvas.height = img.height;
-        var ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0);
+	var img = document.getElementById('imgWrapper').getElementsByTagName('img')[0];
+	if (img) {
+		var canvas = document.createElement('canvas');
+		canvas.width = img.width;
+		canvas.height = img.height;
+		var ctx = canvas.getContext('2d');
+		ctx.drawImage(img, 0, 0);
 
-        canvas.toBlob(function(blob) {
-            var item = new ClipboardItem({ 'image/png': blob });
-            navigator.clipboard.write([item]).then(function() {
-                console.log('Image copied to clipboard.');
-                //alert('Image copied to clipboard.');
-            }, function(error) {
-                console.error('Unable to copy image: ', error);
-                alert('Unable to copy image.');
-            });
-        }, 'image/png');
-    } else {
-        alert('No image to copy.');
-    }
+		canvas.toBlob(function(blob) {
+			var item = new ClipboardItem({ 'image/png': blob });
+			navigator.clipboard.write([item]).then(function() {
+				console.log('Image copied to clipboard.');
+				//alert('Image copied to clipboard.');
+			}, function(error) {
+				console.error('Unable to copy image: ', error);
+				alert('Unable to copy image.');
+			});
+		}, 'image/png');
+	} else {
+		alert('No image to copy.');
+	}
 }
 
-function saveImage() { //fixme
-    var img = document.getElementById('imgWrapper').getElementsByTagName('img')[0];
-    if (img) {
-        var canvas = document.createElement('canvas');
-        canvas.width = img.width;
-        canvas.height = img.height;
-        var ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0);
+function saveImage() {
+	const image = document.getElementById("imgWrapper").querySelector("img");
 
-        canvas.toBlob(function(blob) {
-            var url = URL.createObjectURL(blob);
+	if (!image) {
+	console.error("No image found in #imgWrapper");
+	return;
+	}
 
-            // Create a temporary <a> element and trigger download
-            var a = document.createElement('a');
-            a.href = url;
-            a.download = 'image.png';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }, 'image/png');
-    } else {
-        alert('No image to save.');
-    }
+	const dataURL = image.src.replace(/^data:image\/[a-z]+;base64,/, "");
+	const formattedDataURL = `data:image/png;base64,${dataURL}`;
+
+	const link = document.createElement("a");
+	link.href = formattedDataURL;
+	link.download = "screentone.png"; 
+
+	link.dispatchEvent(new MouseEvent("click"));
 }
+
 
 function swapColors() {
-    const colorPicker1 = document.getElementById('colorPicker1');
-    const colorPicker2 = document.getElementById('colorPicker2');
-    const tempColor = colorPicker1.value;
-    colorPicker1.value = colorPicker2.value;
-    colorPicker2.value = tempColor;
-    refresh();
+	const colorPicker1 = document.getElementById('colorPicker1');
+	const colorPicker2 = document.getElementById('colorPicker2');
+	const tempColor = colorPicker1.value;
+	colorPicker1.value = colorPicker2.value;
+	colorPicker2.value = tempColor;
+	refresh();
 }
 
 function createFlatImageData(canvas){
-    const colorPicker2Container = document.getElementById('colorPicker2Container');
-    const colorSwapButtonContainer = document.getElementById('colorSwapButton');
-    const gradientDirContainer = document.getElementById("gradient-direction-container");
-    colorPicker2Container.style.display = 'none';
-    colorSwapButtonContainer.style.display = 'none';
-    gradientDirContainer.style.display = 'none';
+	const colorPicker2Container = document.getElementById('colorPicker2Container');
+	const colorSwapButtonContainer = document.getElementById('colorSwapButton');
+	const gradientDirContainer = document.getElementById("gradient-direction-container");
+	colorPicker2Container.style.display = 'none';
+	colorSwapButtonContainer.style.display = 'none';
+	gradientDirContainer.style.display = 'none';
 
-    // solidcolor
-    var colorPicker = document.getElementById('colorPicker1');
-    var selectedColor = colorPicker.value;
-    var ctx = canvas.getContext('2d');
-    ctx.fillStyle = selectedColor;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    return imageData;
+	// solidcolor
+	var colorPicker = document.getElementById('colorPicker1');
+	var selectedColor = colorPicker.value;
+	var ctx = canvas.getContext('2d');
+	ctx.fillStyle = selectedColor;
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+	return imageData;
 }
 
 
 function createGradientImageData(canvas){
-    const colorPicker2Container = document.getElementById('colorPicker2Container');
-    const colorSwapButtonContainer = document.getElementById('colorSwapButton');
-    const gradientDirContainer = document.getElementById("gradient-direction-container");
-    colorPicker2Container.style.display = 'block';
-    colorSwapButtonContainer.style.display = 'block';
-    gradientDirContainer.style.display = 'flex';
-    // gradient
+	const colorPicker2Container = document.getElementById('colorPicker2Container');
+	const colorSwapButtonContainer = document.getElementById('colorSwapButton');
+	const gradientDirContainer = document.getElementById("gradient-direction-container");
+	colorPicker2Container.style.display = 'block';
+	colorSwapButtonContainer.style.display = 'block';
+	gradientDirContainer.style.display = 'flex';
+	// gradient
 	var colorPicker1 = document.getElementById('colorPicker1');
 	var colorPicker2 = document.getElementById('colorPicker2');
 	var color1 = colorPicker1.value;
@@ -128,8 +121,8 @@ function createGradientImageData(canvas){
 	let selectedValue;
 	for (const radioButton of radioButtons) {
 	  if (radioButton.checked) {
-	    selectedValue = radioButton.value;
-	    break; // Exit the loop once a checked button is found
+		selectedValue = radioButton.value;
+		break; // Exit the loop once a checked button is found
 	  }
 	}
 	if (selectedValue == 1){ // vertical
@@ -148,16 +141,16 @@ function createGradientImageData(canvas){
 }
 
 function getSelectedShape(){
-    const shapes = document.getElementsByName('shape');
-    let selectedShape = null;
+	const shapes = document.getElementsByName('shape');
+	let selectedShape = null;
 
-    // Iterate through the radio buttons to find the checked one
-    for (let i = 0; i < shapes.length; i++) {
-        if (shapes[i].checked) {
-            selectedShape = shapes[i].value;
-            break;
-        }
-    }
+	// Iterate through the radio buttons to find the checked one
+	for (let i = 0; i < shapes.length; i++) {
+		if (shapes[i].checked) {
+			selectedShape = shapes[i].value;
+			break;
+		}
+	}
 
-    return selectedShape;
+	return selectedShape;
 }

@@ -165,3 +165,14 @@ function showCoefContainer(selectedShape) {
     coefContainer.style.display = "none";
   }
 }
+
+function generateCoefficients() {
+	for (let i = 1; i <= 8; i++) {
+		const denominator = i; // Use i as the denominator for decreasing range
+		const lowerBound = -1 / denominator;
+		const upperBound = 1 / denominator;
+		const randomValue = (Math.random() * (upperBound - lowerBound)) + lowerBound;
+		document.getElementById(`coef${i}`).value = randomValue.toFixed(2);
+	}
+	refresh();
+}

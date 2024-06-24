@@ -53,7 +53,7 @@ function createThresholdPattern(width, height, frequency, angle, shape) {
 	    case 'inception':
 			angle = angle - 45;
 	    	break;
-	    case 'flowers':
+	    case 'tartan':
 			angle = angle - 45;
 	    	break;
 	    case 'harmonic':
@@ -97,8 +97,8 @@ function createThresholdPattern(width, height, frequency, angle, shape) {
                     case 'inception':
                     	value = coef2HarmonicSeries(x, y, frequency, [1, 0, 0, 0, 1], angle);
                     	break;
-                    case 'flowers':
-                    	value = coef2HarmonicSeries(x, y, frequency, [1, 0.5, 1.25, 1/6, 1/8, 0.1], angle);
+                    case 'tartan':
+                    	value = coef2HarmonicSeries(x, y, frequency, [1, -0.4, 0.4, -0.2, -0.65, 0.4, 0.35, -0.95], angle);
                     	break;
                     case 'harmonic':
 						value = coef2HarmonicSeries(x, y, frequency, coef, angle);

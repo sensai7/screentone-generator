@@ -32,93 +32,87 @@ function applyScreentone(imageData, width, height, frequency, angle, shape) {
 }
 
 function createThresholdPattern(width, height, frequency, angle, shape) {
-    const pattern = [];
 
+	var coef;
+	// corrections:
+    switch (shape) {
+	    case 'sine-cosine':
+	    	angle = angle - 45;
+	        break;
+	    case 'circles':
+	    	frequency = frequency / Math.sqrt(2);
+	        break;
+	    case 'lines':
+	    	break;
+	    case 'squares':
+	    	angle = angle - 45;
+	    	break;
+	    case 'sparkles':
+			angle = angle - 45;
+	    	break;
+	    case 'inception':
+			angle = angle - 45;
+	    	break;
+	    case 'flowers':
+			angle = angle - 45;
+	    	break;
+	    case 'harmonic':
+			angle = angle - 45;
+			coef = getHarmonicCoef();
+	    	break;
+    }
+
+    // angle things
+	angle = angle * Math.PI / 180;
+	cosAngle = Math.cos(angle);
+	sinAngle = Math.sin(angle);
+
+    var pattern = [];
     if (shape != "random"){
-        // Corrections
-        var angleCorrection = 0;
-        switch (shape) {
-        	case 'sine-cosine':
-            	angleCorrection = 90;
-                break;
-        	case 'circles':
-            	angleCorrection = 45;
-            	frequency = frequency / Math.sqrt(2);
-                break;
-        	case 'lines':
-            	angleCorrection = 45;
-            	frequency = frequency / Math.sqrt(2);
-                break;
-        	case 'rounded-squares':
-            	angleCorrection = 135;
-            	frequency = frequency / Math.sqrt(2);
-                break;
-            case 'squiggly-lines':	
-            	angleCorrection = 135;
-            	frequency = frequency / Math.sqrt(2);
-            	break;
-            case 'lemons':	
-            	frequency = frequency / Math.sqrt(2);
-            	angleCorrection = 135;
-            	break;
-            }
-
-        const radians = (angle + angleCorrection) * Math.PI / 180;
-        const sin = Math.sin(radians);
-        const cos = Math.cos(radians);
-
-        for (let y = 0; y < height; y++) {
+       for (let y = 0; y < height; y++) {
             pattern[y] = [];
             for (let x = 0; x < width; x++) {
                 let value;
-                const xFreq = x * frequency;
-                const yFreq = y * frequency;
-
-                switch (shape) {
+		        switch (shape) {
                     case 'sine-cosine':
-                        value = Math.sin(xFreq * cos - yFreq * sin) * Math.cos(xFreq * sin + yFreq * cos + Math.PI/2);
+                    	transformX = x * frequency * Math.cos(angle) - y * frequency * Math.sin(angle);
+    					transformY = x * frequency * Math.sin(angle) + y * frequency * Math.cos(angle);
+                        value = Math.cos(transformX) * Math.cos(transformY);
                         break;
-                    case 'circles':
-                        value = Math.abs(Math.sin(xFreq * cos - yFreq * sin + Math.PI/2)) + Math.abs(Math.cos(xFreq * sin + yFreq * cos + Math.PI/2 ));
+	                case 'circles':
+                    	transformX = x * frequency * Math.cos(angle) - y * frequency * Math.sin(angle);
+    					transformY = x * frequency * Math.sin(angle) + y * frequency * Math.cos(angle);
+                        value = Math.abs(Math.sin(transformX)) + Math.abs(Math.cos(transformY));
                         break;
                     case 'lines':
-                        value = Math.sin(xFreq * cos - yFreq * sin);
-                        break;
-                    case 'rounded-squares':
-                        value = Math.abs(Math.sin(xFreq * cos - yFreq * sin)) * Math.abs(Math.cos(xFreq * sin + yFreq * cos)) *2;
-                        break;
-                    case 'cross':
-                        value = Math.abs(Math.sin(xFreq * cos - yFreq * sin)) + Math.cos(xFreq * sin + yFreq * cos);
-                        break;
-                    case 'lemons':
-                        value = Math.abs(Math.sin(xFreq * cos - yFreq * sin )) - Math.abs(Math.cos(xFreq * sin + yFreq * cos + Math.PI/2 ));
-                        break;
-                    case 'squiggly-lines':
-                        value = Math.abs(Math.sin(xFreq * cos - yFreq * sin)) + Math.cos(xFreq * sin + yFreq * cos + Math.PI/2 );
-                        break;
+                    	transformX = x * frequency * Math.cos(angle) - y * frequency * Math.sin(angle);
+                    	value = Math.cos(transformX);
+                    	break;
+                    case 'squares':
+                    	value = coef2HarmonicSeries(x, y, frequency, [1, 0, 0.11111, 0, 0.04, 0, 0.02041, 0, 0.01234, 0, 0.00826], angle);
+                    	break;
+                    case 'sparkles':
+                    	value = coef2HarmonicSeries(x, y, frequency, [1, 0, 0.22222, 0, 0.12, 0, 0.0816, 0, 0.0617], angle);
+                    	break;
+                    case 'inception':
+                    	value = coef2HarmonicSeries(x, y, frequency, [1, 0, 0, 0, 1], angle);
+                    	break;
+                    case 'flowers':
+                    	value = coef2HarmonicSeries(x, y, frequency, [1, 0.5, 1.25, 1/6, 1/8, 0.1], angle);
+                    	break;
+                    case 'harmonic':
+						value = coef2HarmonicSeries(x, y, frequency, coef, angle);
+	    				break;
+	            }
+                pattern[y][x] = value;
+          	}
+    	}
 
-                }
-                pattern[y][x] = (value+1) * 128;
-            }
-        }
+    	minVal = minValue(pattern);
+    	maxVal = maxValue(pattern);
+    	pattern = normalize2D(pattern, minVal, maxVal);
 
-     	var minValue = pattern[0][0];
-     	var maxValue = pattern[0][0];
-     	for (let i = 0; i < pattern.length; i++) {
-     	  for (let j = 0; j < pattern[i].length; j++) {
-     	    const value = pattern[i][j];
-     	    minValue = Math.min(minValue, value);
-     	    maxValue = Math.max(maxValue, value);
-     	  }
-     	}
-
-        for (let y = 0; y < height; y++) {
-            for (let x = 0; x < width; x++) {
-            	pattern[y][x] = pattern[y][x] - minValue;
-            	//pattern[y][x] = pattern[y][x] * 255 / maxValue; // 🤔 whats going on here?
-            }
-        }
-    }else{
+    }else{ // random pixels
     	for (let y = 0; y < height; y++) {
     		pattern[y] = [];
     		for (let x = 0; x < width; x++) {
@@ -126,6 +120,68 @@ function createThresholdPattern(width, height, frequency, angle, shape) {
         	}
         }
     }
-	
+
     return pattern;
+}
+
+function maxValue(arr){
+	let maxVal = -Infinity;
+	for (let i = 0; i < arr.length; i++) {
+  		for (let j = 0; j < arr[i].length; j++) {
+    		if (arr[i][j] > maxVal) {
+      			maxVal = arr[i][j];
+    		}
+  		}
+	}
+	return maxVal;
+}
+
+function minValue(arr){
+	let minVal = Infinity;
+	for (let i = 0; i < arr.length; i++) {
+  		for (let j = 0; j < arr[i].length; j++) {
+    		if (arr[i][j] < minVal) {
+      			minVal = arr[i][j];
+    		}
+  		}
+	}
+	return minVal;
+}
+
+function normalize2D(arr, min, max){
+	for (let i = 0; i < arr.length; i++) {
+  		for (let j = 0; j < arr[i].length; j++) {
+    		arr[i][j] = (arr[i][j] - min) / (max - min) * 255;
+    	}
+    }
+    return arr;
+}
+
+function coef2HarmonicSeries(x, y,  frequency, coefTable, angle){
+    var xFreq = (x - 1) * frequency;
+	var yFreq = (y - 1) * frequency;
+
+    var transform_x = xFreq * Math.cos(angle) - yFreq * Math.sin(angle);
+    var transform_y = xFreq * Math.sin(angle) + yFreq * Math.cos(angle);
+
+    var result = 0;
+    for (var i = 0; i < coefTable.length; i++) {
+    	result +=  coefTable[i] * Math.cos((i+1) * transform_x) * Math.cos((i+1) * transform_y);
+    }
+
+    return result;
+}
+
+function getHarmonicCoef() {
+  const coefficients = [
+    document.getElementById('coef1').value,
+    document.getElementById('coef2').value,
+    document.getElementById('coef3').value,
+    document.getElementById('coef4').value,
+    document.getElementById('coef5').value,
+    document.getElementById('coef6').value,
+    document.getElementById('coef7').value,
+    document.getElementById('coef8').value,
+  ];
+  return coefficients;
 }

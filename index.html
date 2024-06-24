@@ -85,7 +85,7 @@
 
         <!-- Shape selection row -->
         <div class="form-group text-center">
-            <label class="text-center">Shape</label>
+            <label class="text-center">Basic shapes</label>
             <div class="row justify-content-center align-items-center">
                 <div class="col-sm-2 ">
                     <input class="form-check-input" type="radio" name="shape" id="shape1" value="sine-cosine" onclick="refresh()" checked>
@@ -109,37 +109,107 @@
                     </label>
                 </div>
                 <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape4" value="rounded-squares" onclick="refresh()">
+                    <input class="form-check-input" type="radio" name="shape" id="shape4" value="random" onclick="refresh()">
                     <label class="form-check-label" for="shape4">
-                        <img src="img/roundedsquares.png" alt="Shape 4">
-                        <div>Rounded squares</div>
-                    </label>
-                </div>
-            </div>
-            <div class="row justify-content-center align-items-center">
-                <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape5" value="squiggly-lines" onclick="refresh()">
-                    <label class="form-check-label" for="shape5">
-                        <img src="img/squiggly.png" alt="Shape 5">
-                        <div>Squiggly lines</div>
-                    </label>
-                </div>
-                <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape6" value="lemons" onclick="refresh()">
-                    <label class="form-check-label" for="shape6">
-                        <img src="img/lemons.png" alt="Shape 6">
-                        <div>Lemons</div>
-                    </label>
-                </div>
-                <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape7" value="random" onclick="refresh()">
-                    <label class="form-check-label" for="shape7">
-                        <img src="img/random.png" alt="Shape 7">
+                        <img src="img/random.png" alt="Shape 4">
                         <div>Random</div>
                     </label>
                 </div>
             </div>
+            <label class="text-center">Harmonic shapes</label>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-sm-2 ">
+                    <input class="form-check-input" type="radio" name="shape" id="shape5" value="squares" onclick="refresh()">
+                    <label class="form-check-label" for="shape5">
+                        <img src="img/squares.png" alt="Shape 5">
+                        <div>Squares</div>
+                    </label>
+                </div>
+                <div class="col-sm-2 ">
+                    <input class="form-check-input" type="radio" name="shape" id="shape6" value="sparkles" onclick="refresh()">
+                    <label class="form-check-label" for="shape6">
+                        <img src="img/sparkles.png" alt="Shape 6">
+                        <div>Sparkles</div>
+                    </label>
+                </div>
+                <div class="col-sm-2 ">
+                    <input class="form-check-input" type="radio" name="shape" id="shape7" value="inception" onclick="refresh()">
+                    <label class="form-check-label" for="shape7">
+                        <img src="img/inception.png" alt="Shape 7">
+                        <div>Inception</div>
+                    </label>
+                </div>
+                <div class="col-sm-2 ">
+                    <input class="form-check-input" type="radio" name="shape" id="shape8" value="flowers" onclick="refresh()">
+                    <label class="form-check-label" for="shape8">
+                        <img src="img/arbitrary.png" alt="Shape 8">
+                        <div>Flowers</div>
+                    </label>
+                </div>
+            </div>
+
+            <label class="text-center">Do It Yourself</label>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-sm-2 ">
+                    <input class="form-check-input" type="radio" name="shape" id="harmonic" value="harmonic" onclick="refresh()">
+                    <label class="form-check-label" for="harmonic">
+                        <img src="img/arbitrary.png" alt="Shape 9">
+                        <div>Harmonic</div>
+                    </label>
+                </div>
+                <div class="col-sm-2 ">
+                    <input class="form-check-input" type="radio" name="shape" id="arbitrary" value="arbitrary" onclick="refresh()" disabled>
+                    <label class="form-check-label" for="arbitrary">
+                        <img src="img/arbitrary.png" alt="Shape 10" class="opacity-50">
+                        <div>Custom (Soon™)</div>
+                    </label>
+                </div>
+            </div>
+
         </div>
+
+
+        <!-- Harmonic coefficients -->
+        <div class="form-group text-center" id="coef-container">
+	        <label class="text-center">Harmonic coefficients</label>
+	        <div class="row justify-content-center align-items-center">
+	        	<label class="col-sm-smol col-form-label">1</label>
+	            <div class="col-sm-custom">
+	                <input type="number" class="form-control" id="coef1" value="1" step="0.05"  onchange="refresh()">
+	            </div>
+	            <label class="col-sm-smol col-form-label">2</label>
+	            <div class="col-sm-custom">
+	                <input type="number" class="form-control" id="coef2" value="0" step="0.05" onchange="refresh()">
+	            </div>
+	            <label class="col-sm-smol col-form-label">3</label>
+	            <div class="col-sm-custom">
+	                <input type="number" class="form-control" id="coef3" value="0" step="0.05"  onchange="refresh()">
+	            </div>
+	            <label class="col-sm-smol col-form-label">4</label>
+	            <div class="col-sm-custom">
+	                <input type="number" class="form-control" id="coef4" value="0" step="0.05"  onchange="refresh()">
+	            </div>
+	        </div>
+	        <div class="row justify-content-center align-items-center">
+	        	<label class="col-sm-smol col-form-label">5</label>
+	            <div class="col-sm-custom">
+	                <input type="number" class="form-control" id="coef5" value="0" step="0.05"  onchange="refresh()">
+	            </div>
+	            <label class="col-sm-smol col-form-label">6</label>
+	            <div class="col-sm-custom">
+	                <input type="number" class="form-control" id="coef6" value="0" step="0.05" onchange="refresh()">
+	            </div>
+	            <label class="col-sm-smol col-form-label">7</label>
+	            <div class="col-sm-custom">
+	                <input type="number" class="form-control" id="coef7" value="0" step="0.05"  onchange="refresh()">
+	            </div>
+	            <label class="col-sm-smol col-form-label">8</label>
+	            <div class="col-sm-custom">
+	                <input type="number" class="form-control" id="coef8" value="0" step="0.05"  onchange="refresh()">
+	            </div>
+	        </div>
+	    </div>
+
 
         <!-- Image size control row -->
         <div class="form-group row justify-content-center">
@@ -201,6 +271,7 @@
             ctx.putImageData(screentoneData, 0, 0);
             var img = new Image();
             img.src = canvas.toDataURL();
+            img.id
             var imgWrapper = document.getElementById('imgWrapper');
             imgWrapper.innerHTML = '';
             imgWrapper.appendChild(img);

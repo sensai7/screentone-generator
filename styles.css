@@ -4,3 +4,18 @@
 .center-element {
 	margin : 0 auto;
 }
+
+.col-sm-custom {
+  width: 12.5%; /* Adjust the percentage as needed */
+  float: left; /* Bootstrap uses float for grid layout */
+  padding: .5rem 1rem; /* Adjust padding as needed */
+}
+
+.col-sm-smol {
+  width: 3%; /* Adjust the percentage as needed */
+  float: left; /* Bootstrap uses float for grid layout */
+}
+
+.opacity-50{
+	opacity: 0.5;
+}

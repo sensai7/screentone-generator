@@ -152,5 +152,16 @@ function getSelectedShape(){
 		}
 	}
 
+	showCoefContainer(selectedShape);
+
 	return selectedShape;
+}
+
+function showCoefContainer(selectedShape) {
+  const coefContainer = document.getElementById("coef-container");
+  if (selectedShape === "harmonic") {
+    coefContainer.style.display = "block";
+  } else {
+    coefContainer.style.display = "none";
+  }
 }

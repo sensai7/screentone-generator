@@ -26,6 +26,10 @@
                 <input class="form-check-input" type="radio" name="options" id="option2" value="2" onclick="refresh()">
                 <label class="form-check-label" for="option2">Gradient</label>
             </div>
+            <div class="col-sm-2 form-check">
+                <input class="form-check-input" type="radio" name="options" id="option3" value="3" onclick="refresh()">
+                <label class="form-check-label" for="option3">Image upload</label>
+            </div>
         </div>
 
         <!-- Color pickers -->
@@ -44,6 +48,17 @@
                 <div>Secondary color</div>
             </div>
         </div>
+
+        <!-- Image upload -->
+        <div id="imageUpload" class="form-group row justify-content-center text-center">
+            <div class="col-sm-4">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="upload" accept="image/*" onchange="handleOnchangeInput(this)">
+                    <label class="custom-file-label" for="upload">Choose file</label>
+                </div>
+            </div>
+        </div>
+
 
 		<!-- Gradient direction -->
 		<div class="form-group row justify-content-center text-center" id="gradient-direction-container">
@@ -213,7 +228,7 @@
 
 
         <!-- Image size control row -->
-        <div class="form-group row justify-content-center">
+        <div class="form-group row justify-content-center" id="imageSizeContainer">
             <label class="col-sm-2 col-form-label">Image size</label>
             <div class="col-sm-2">
                 <input type="number" class="form-control" id="width" min="1" value="256" onchange="refresh()">
@@ -228,7 +243,7 @@
         <div id="imgWrapper" class="d-flex justify-content-center align-items-center" ></div>
 
         <!-- Buttons for copy and save -->
-        <div class="text-center mt-2">
+        <div id="buttonContainer" class="text-center mt-2">
             <button class="btn btn-primary mr-2" onclick="copyToClipboard()">Copy to clipboard</button>
             <button class="btn btn-success" onclick="saveImage()">Save as .png</button>
         </div>
@@ -247,6 +262,7 @@
         function refresh() {
             const option1 = document.getElementById('option1').checked;
             const option2 = document.getElementById('option2').checked;
+            const option3 = document.getElementById('option3').checked;
             var width = document.getElementById('width').value;
             var height = document.getElementById('height').value;
             const colorSwapButtonContainer = document.getElementById('colorSwapButton');
@@ -256,30 +272,50 @@
 			canvas.height = height;
 			var ctx = canvas.getContext('2d');
 
+            var imageData;
             if (option1) {
-            	var imageData = createFlatImageData(canvas);
+            	imageData = createFlatImageData(canvas);
             } else if (option2) {
-            	var imageData = createGradientImageData(canvas);
+            	imageData = createGradientImageData(canvas);
+            } else if (option3) {
+                createUploadedImageData();
             }
 
-            selectedShape = getSelectedShape();
+            if (imageData){
+                var selectedShape = getSelectedShape();
+                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
+                var angle = document.getElementById('angleText').value;
+                var screentoneData = applyScreentone(imageData.data, width, height, frequency, angle, selectedShape);
 
-            var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
-            var angle = document.getElementById('angleText').value;
-            var screentoneData = applyScreentone(imageData.data, width, height, frequency, angle, selectedShape);
+                // Put the screentone image data back to the canvas
+                ctx.putImageData(screentoneData, 0, 0);
+                var img = new Image();
+                img.src = canvas.toDataURL();
+                img.id
+                var imgWrapper = document.getElementById('imgWrapper');
+                imgWrapper.innerHTML = '';
+                imgWrapper.appendChild(img);
+                var buttons = document.getElementById('buttonContainer');
+                buttons.style.display = 'block';
+            }else{
+                var imgWrapper = document.getElementById('imgWrapper');
+                imgWrapper.innerHTML = '';
+                var buttons = document.getElementById('buttonContainer');
+                buttons.style.display = 'none';
+            }
+        }
 
-            // Put the screentone image data back to the canvas
-            ctx.putImageData(screentoneData, 0, 0);
-            var img = new Image();
-            img.src = canvas.toDataURL();
-            img.id
-            var imgWrapper = document.getElementById('imgWrapper');
-            imgWrapper.innerHTML = '';
-            imgWrapper.appendChild(img);
+
+        function handleOnchangeInput(input) {
+          const filename = input.files[0].name;
+          const label = document.querySelector('.custom-file-label');
+          label.textContent = filename;
         }
 
         // Initial call to setup the page
         refresh();
+
+
     </script>
 </body>
 </html>

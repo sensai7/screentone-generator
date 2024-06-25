@@ -84,12 +84,18 @@ function swapColors() {
 }
 
 function createFlatImageData(canvas){
+	const colorPickers = document.getElementById('colorPickers');
+	const imageUpload = document.getElementById('imageUpload');
 	const colorPicker2Container = document.getElementById('colorPicker2Container');
 	const colorSwapButtonContainer = document.getElementById('colorSwapButton');
 	const gradientDirContainer = document.getElementById("gradient-direction-container");
+	const imageSizeContainer = document.getElementById("imageSizeContainer");
 	colorPicker2Container.style.display = 'none';
 	colorSwapButtonContainer.style.display = 'none';
 	gradientDirContainer.style.display = 'none';
+	imageUpload.style.display = 'none';
+	colorPickers.style.display = 'flex';
+	imageSizeContainer.style.display = 'flex';
 
 	// solidcolor
 	var colorPicker = document.getElementById('colorPicker1');
@@ -103,12 +109,19 @@ function createFlatImageData(canvas){
 
 
 function createGradientImageData(canvas){
+	const colorPickers = document.getElementById('colorPickers');
+	const imageUpload = document.getElementById('imageUpload');
 	const colorPicker2Container = document.getElementById('colorPicker2Container');
 	const colorSwapButtonContainer = document.getElementById('colorSwapButton');
 	const gradientDirContainer = document.getElementById("gradient-direction-container");
+	const imageSizeContainer = document.getElementById("imageSizeContainer");
 	colorPicker2Container.style.display = 'block';
 	colorSwapButtonContainer.style.display = 'block';
 	gradientDirContainer.style.display = 'flex';
+	imageUpload.style.display = 'none';
+	colorPickers.style.display = 'flex';
+	imageSizeContainer.style.display = 'flex';
+
 	// gradient
 	var colorPicker1 = document.getElementById('colorPicker1');
 	var colorPicker2 = document.getElementById('colorPicker2');
@@ -138,6 +151,19 @@ function createGradientImageData(canvas){
 	var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
 	return imageData;
+}
+
+function createUploadedImageData(){
+	const imageSizeContainer = document.getElementById("imageSizeContainer");
+	const colorPickers = document.getElementById('colorPickers');
+	const imageUpload = document.getElementById('imageUpload');
+	const gradientDirContainer = document.getElementById("gradient-direction-container");
+	imageUpload.style.display = 'flex';
+	colorPickers.style.display = 'none';
+	gradientDirContainer.style.display = 'none';
+	imageSizeContainer.style.display = 'none';
+
+	//todo
 }
 
 function getSelectedShape(){

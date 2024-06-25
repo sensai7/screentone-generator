@@ -263,6 +263,7 @@
             const option1 = document.getElementById('option1').checked;
             const option2 = document.getElementById('option2').checked;
             const option3 = document.getElementById('option3').checked;
+            var selectedShape = getSelectedShape();
             var width = document.getElementById('width').value;
             var height = document.getElementById('height').value;
             const colorSwapButtonContainer = document.getElementById('colorSwapButton');
@@ -282,7 +283,7 @@
             }
 
             if (imageData){
-                var selectedShape = getSelectedShape();
+                
                 var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
                 var angle = document.getElementById('angleText').value;
                 var screentoneData = applyScreentone(imageData.data, width, height, frequency, angle, selectedShape);

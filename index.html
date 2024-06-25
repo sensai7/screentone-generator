@@ -53,7 +53,7 @@
         <div id="imageUpload" class="form-group row justify-content-center text-center">
             <div class="col-sm-4">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="upload" accept="image/*" onchange="handleOnchangeInput(this)">
+                    <input type="file" class="custom-file-input" id="upload" accept="image/*" onchange="refresh()">
                     <label class="custom-file-label" for="upload">Choose file</label>
                 </div>
             </div>
@@ -242,6 +242,10 @@
 
         <div id="imgWrapper" class="d-flex justify-content-center align-items-center" ></div>
 
+        <div class="form-group text-center">
+            <canvas id="canvas" style="display:none;"></canvas>
+        </div>
+
         <!-- Buttons for copy and save -->
         <div id="buttonContainer" class="text-center mt-2">
             <button class="btn btn-primary mr-2" onclick="copyToClipboard()">Copy to clipboard</button>
@@ -279,11 +283,31 @@
             } else if (option2) {
             	imageData = createGradientImageData(canvas);
             } else if (option3) {
-                createUploadedImageData();
+                var imgWrapper = document.getElementById('imgWrapper');
+                imgWrapper.innerHTML = '';
+                var buttons = document.getElementById('buttonContainer');
+                buttons.style.display = 'none';
+                var canvasWrapper = document.getElementById('canvas');
+                canvasWrapper.style.display = 'block';
+
+                createUploadedImageDataInterface();
+                createUploadedImageData().then(data => {
+                    imageData = data;
+                    if (imageData) {
+                        // do further actions with imageData
+                        console.log('Image data loaded:', imageData);
+                        console.log('Turn into screentone in 1');
+                        buttons.style.display = 'block';
+                    }
+                }).catch(error => {
+                    console.error('Error loading image data:', error);
+                });
+                return;
             }
 
-            if (imageData){
-                
+            if (imageData) {
+                // do further actions with imageData
+                console.log('Turn into screentone in 2');
                 var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
                 var angle = document.getElementById('angleText').value;
                 var screentoneData = applyScreentone(imageData.data, width, height, frequency, angle, selectedShape);
@@ -299,19 +323,46 @@
                 var buttons = document.getElementById('buttonContainer');
                 buttons.style.display = 'block';
             }else{
-                var imgWrapper = document.getElementById('imgWrapper');
-                imgWrapper.innerHTML = '';
-                var buttons = document.getElementById('buttonContainer');
-                buttons.style.display = 'none';
+
             }
+
         }
 
 
-        function handleOnchangeInput(input) {
-          const filename = input.files[0].name;
-          const label = document.querySelector('.custom-file-label');
-          label.textContent = filename;
+        function createUploadedImageData() {
+            return new Promise((resolve, reject) => {
+                const fileInput = document.getElementById('upload');
+                const file = fileInput.files[0];
+
+                if (!file) {
+                    reject('No file selected');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.onload = function() {
+                        const canvas = document.getElementById('canvas');
+                        const context = canvas.getContext('2d');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        context.drawImage(img, 0, 0, img.width, img.height);
+                        const imageData = context.getImageData(0, 0, img.width, img.height);
+                        resolve(imageData);
+                    };
+                    img.onerror = function() {
+                        reject('Error loading image');
+                    };
+                    img.src = event.target.result;
+                };
+                reader.onerror = function() {
+                    reject('Error reading file');
+                };
+                reader.readAsDataURL(file);
+            });
         }
+
 
         // Initial call to setup the page
         refresh();

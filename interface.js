@@ -153,7 +153,7 @@ function createGradientImageData(canvas){
 	return imageData;
 }
 
-function createUploadedImageData(){
+function createUploadedImageDataInterface(){
 	const imageSizeContainer = document.getElementById("imageSizeContainer");
 	const colorPickers = document.getElementById('colorPickers');
 	const imageUpload = document.getElementById('imageUpload');
@@ -202,3 +202,4 @@ function generateCoefficients() {
 	}
 	refresh();
 }
+

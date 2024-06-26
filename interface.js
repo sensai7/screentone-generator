@@ -44,7 +44,7 @@ function copyToClipboard() {
 			var item = new ClipboardItem({ 'image/png': blob });
 			navigator.clipboard.write([item]).then(function() {
 				console.log('Image copied to clipboard.');
-				//alert('Image copied to clipboard.');
+				showToast('Image copied to clipboard.');
 			}, function(error) {
 				console.error('Unable to copy image: ', error);
 				alert('Unable to copy image.');
@@ -60,8 +60,6 @@ function saveImage() {
 	var name = getSavedFileName();
 
 
-
-
 	if (!image) {
 	console.error("No image found in #imgWrapper");
 	return;
@@ -73,6 +71,7 @@ function saveImage() {
 	const link = document.createElement("a");
 	link.href = formattedDataURL;
 	link.download = name + ".png"; 
+	showToast('Image saved to download directory.');
 
 	link.dispatchEvent(new MouseEvent("click"));
 }
@@ -215,4 +214,13 @@ function getSavedFileName(){
     var angle = document.getElementById('angleText').value;
 
     return "screentone_" + pxSize + "px@" + angle + "_" + shape + "_" + width + "x" + height + "px";
+}
+
+function showToast(message) {
+	var toast = document.getElementById("toast");
+	toast.className = "toast show";
+	toast.innerText = message;
+	setTimeout(function() {
+	  toast.className = toast.className.replace("show", "");
+	}, 3000);
 }

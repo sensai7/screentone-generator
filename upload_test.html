@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screentone Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Screentone Effect</h1>
+    <input type="file" id="upload" accept="image/*">
+    <br><br>
+    <canvas id="originalCanvas"></canvas>
+    <br><br>
+    <canvas id="screentoneCanvas"></canvas>
+
+    <script>
+        document.getElementById('upload').addEventListener('change', handleImage, false);
+
+        function handleImage(event) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const originalCanvas = document.getElementById('originalCanvas');
+                    const screentoneCanvas = document.getElementById('screentoneCanvas');
+                    const ctxOriginal = originalCanvas.getContext('2d');
+                    const ctxScreentone = screentoneCanvas.getContext('2d');
+
+                    originalCanvas.width = img.width;
+                    originalCanvas.height = img.height;
+                    screentoneCanvas.width = img.width;
+                    screentoneCanvas.height = img.height;
+
+                    ctxOriginal.drawImage(img, 0, 0);
+
+                    const imageData = ctxOriginal.getImageData(0, 0, img.width, img.height);
+                    const screentoneData = applyScreentone(imageData.data, img.width, img.height, 0.05, 45);
+                    ctxScreentone.putImageData(screentoneData, 0, 0);
+                }
+                img.src = e.target.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function applyScreentone(imageData, width, height, frequency, angle) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = width;
+            canvas.height = height;
+            const outputData = ctx.createImageData(width, height);
+
+            const thresholdPattern = createThresholdPattern(width, height, frequency, angle);
+
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    const index = (y * width + x) * 4;
+                    const gray = (imageData[index] + imageData[index + 1] + imageData[index + 2]) / 3;
+                    const threshold = thresholdPattern[y % thresholdPattern.length][x % thresholdPattern[0].length];
+                    const color = gray < threshold ? 0 : 255;
+
+                    outputData.data[index] = color;
+                    outputData.data[index + 1] = color;
+                    outputData.data[index + 2] = color;
+                    outputData.data[index + 3] = 255; // Alpha channel
+                }
+            }
+
+            return outputData;
+        }
+
+        function createThresholdPattern(width, height, frequency, angle) {
+            const pattern = [];
+            const radians = angle * Math.PI / 180;
+            const sin = Math.sin(radians);
+            const cos = Math.cos(radians);
+
+            for (let y = 0; y < height; y++) {
+                pattern[y] = [];
+                for (let x = 0; x < width; x++) {
+                    const xFreq = x * frequency;
+                    const yFreq = y * frequency;
+                    const value = Math.sin(xFreq * cos - yFreq * sin) * Math.cos(xFreq * sin + yFreq * cos);
+                    pattern[y][x] = (value + 1) * 128; // Normalize to 0-255
+                }
+            }
+
+            return pattern;
+        }
+    </script>
+</body>
+</html>

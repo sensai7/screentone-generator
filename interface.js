@@ -203,3 +203,36 @@ function generateCoefficients() {
 	refresh();
 }
 
+function createUploadedImageData() {
+    return new Promise((resolve, reject) => {
+        const fileInput = document.getElementById('upload');
+        const file = fileInput.files[0];
+
+        if (!file) {
+            reject('No file selected');
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const img = new Image();
+            img.onload = function() {
+                const canvas = document.getElementById('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                context.drawImage(img, 0, 0, img.width, img.height);
+                const imageData = context.getImageData(0, 0, img.width, img.height);
+                resolve(imageData);
+            };
+            img.onerror = function() {
+                reject('Error loading image');
+            };
+            img.src = event.target.result;
+        };
+        reader.onerror = function() {
+            reject('Error reading file');
+        };
+        reader.readAsDataURL(file);
+    });
+}

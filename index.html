@@ -54,7 +54,7 @@
             <div class="col-sm-4">
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="upload" accept="image/*" onchange="refresh()">
-                    <label class="custom-file-label" for="upload">Choose file</label>
+                    <label class="custom-file-label" for="upload" id="uploadLabel">Choose file</label>
                 </div>
             </div>
         </div>
@@ -242,10 +242,6 @@
 
         <div id="imgWrapper" class="d-flex justify-content-center align-items-center" ></div>
 
-        <div class="form-group text-center">
-            <canvas id="canvas" style="display:none;"></canvas>
-        </div>
-
         <!-- Buttons for copy and save -->
         <div id="buttonContainer" class="text-center mt-2">
             <button class="btn btn-primary mr-2" onclick="copyToClipboard()">Copy to clipboard</button>
@@ -263,19 +259,26 @@
     <script src="interface.js"></script>
     <script src="screentone.js"></script>
     <script>
+
+    	var uploadedImageDataUrl = null;
+    	var filename = null;
+
         function refresh() {
             const option1 = document.getElementById('option1').checked;
             const option2 = document.getElementById('option2').checked;
             const option3 = document.getElementById('option3').checked;
+            var canvasWrapper = document.getElementById('canvas');
             var selectedShape = getSelectedShape();
             var width = document.getElementById('width').value;
             var height = document.getElementById('height').value;
             const colorSwapButtonContainer = document.getElementById('colorSwapButton');
+            var imgWrapper = document.getElementById('imgWrapper');
+            imgWrapper.innerHTML = '';
                         
 			var canvas = document.createElement('canvas');
 			canvas.width = width;
 			canvas.height = height;
-			var ctx = canvas.getContext('2d');
+			var ctx = canvas.getContext('2d', { willReadFrequently: true });
 
             var imageData;
             if (option1) {
@@ -283,31 +286,73 @@
             } else if (option2) {
             	imageData = createGradientImageData(canvas);
             } else if (option3) {
-                var imgWrapper = document.getElementById('imgWrapper');
-                imgWrapper.innerHTML = '';
                 var buttons = document.getElementById('buttonContainer');
                 buttons.style.display = 'none';
-                var canvasWrapper = document.getElementById('canvas');
-                canvasWrapper.style.display = 'block';
-
                 createUploadedImageDataInterface();
-                createUploadedImageData().then(data => {
-                    imageData = data;
-                    if (imageData) {
-                        // do further actions with imageData
-                        console.log('Image data loaded:', imageData);
-                        console.log('Turn into screentone in 1');
-                        buttons.style.display = 'block';
-                    }
-                }).catch(error => {
-                    console.error('Error loading image data:', error);
-                });
-                return;
+
+
+		        var fileInput = document.getElementById('upload');
+		        fileInput.addEventListener('change', function() {
+		            var file = fileInput.files[0];
+		            filename = file.name;
+		            if (file) {
+		                var reader = new FileReader();
+		                reader.onload = function(e) {
+		                	uploadedImageDataUrl = e.target.result;
+		                	var label = document.getElementById('uploadLabel');
+							label.innerHTML = filename;
+		                    var img = new Image();
+		                    img.onload = function() {
+		                        canvas.width = img.width;
+		                        canvas.height = img.height;
+		                        ctx.drawImage(img, 0, 0);
+		                        imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+		                        // Further processing with imageData
+
+				                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
+				                var angle = document.getElementById('angleText').value;
+				                var screentoneData = applyScreentone(imageData.data, imageData.width, imageData.height, frequency, angle, selectedShape);
+
+		                        imgWrapper.innerHTML = '';
+		                        ctx.putImageData(screentoneData, 0, 0);
+				                var img2 = new Image();
+				                img2.src = canvas.toDataURL();
+				                imgWrapper.appendChild(img2);
+		                    }
+		                    img.src = e.target.result;
+		                }
+		                reader.readAsDataURL(file);
+		            }
+		        });
+
+		        // If there is already an uploaded image, reload it
+		        if (uploadedImageDataUrl) {
+		            var img = new Image();
+		            img.onload = function() {
+		                canvas.width = img.width;
+		                canvas.height = img.height;
+		                ctx.drawImage(img, 0, 0);
+		                imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+
+		                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
+		                var angle = document.getElementById('angleText').value;
+		                var screentoneData = applyScreentone(imageData.data, imageData.width, imageData.height, frequency, angle, selectedShape);
+
+                        imgWrapper.innerHTML = '';
+                        ctx.putImageData(screentoneData, 0, 0);
+		                var img3 = new Image();
+		                img3.src = canvas.toDataURL();
+		                imgWrapper.appendChild(img3);
+
+		            }
+		            img.src = uploadedImageDataUrl;
+		        }
+
             }
 
             if (imageData) {
-                // do further actions with imageData
-                console.log('Turn into screentone in 2');
+                console.log('Turning generated image into screentone');
                 var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
                 var angle = document.getElementById('angleText').value;
                 var screentoneData = applyScreentone(imageData.data, width, height, frequency, angle, selectedShape);
@@ -316,53 +361,15 @@
                 ctx.putImageData(screentoneData, 0, 0);
                 var img = new Image();
                 img.src = canvas.toDataURL();
-                img.id
-                var imgWrapper = document.getElementById('imgWrapper');
-                imgWrapper.innerHTML = '';
+
                 imgWrapper.appendChild(img);
                 var buttons = document.getElementById('buttonContainer');
                 buttons.style.display = 'block';
             }else{
-
+            	// this *should* never happen
             }
 
         }
-
-
-        function createUploadedImageData() {
-            return new Promise((resolve, reject) => {
-                const fileInput = document.getElementById('upload');
-                const file = fileInput.files[0];
-
-                if (!file) {
-                    reject('No file selected');
-                    return;
-                }
-
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const img = new Image();
-                    img.onload = function() {
-                        const canvas = document.getElementById('canvas');
-                        const context = canvas.getContext('2d');
-                        canvas.width = img.width;
-                        canvas.height = img.height;
-                        context.drawImage(img, 0, 0, img.width, img.height);
-                        const imageData = context.getImageData(0, 0, img.width, img.height);
-                        resolve(imageData);
-                    };
-                    img.onerror = function() {
-                        reject('Error loading image');
-                    };
-                    img.src = event.target.result;
-                };
-                reader.onerror = function() {
-                    reject('Error reading file');
-                };
-                reader.readAsDataURL(file);
-            });
-        }
-
 
         // Initial call to setup the page
         refresh();

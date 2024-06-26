@@ -57,6 +57,10 @@ function copyToClipboard() {
 
 function saveImage() {
 	const image = document.getElementById("imgWrapper").querySelector("img");
+	var name = getSavedFileName();
+
+
+
 
 	if (!image) {
 	console.error("No image found in #imgWrapper");
@@ -68,7 +72,7 @@ function saveImage() {
 
 	const link = document.createElement("a");
 	link.href = formattedDataURL;
-	link.download = "screentone.png"; 
+	link.download = name + ".png"; 
 
 	link.dispatchEvent(new MouseEvent("click"));
 }
@@ -203,36 +207,12 @@ function generateCoefficients() {
 	refresh();
 }
 
-function createUploadedImageData() {
-    return new Promise((resolve, reject) => {
-        const fileInput = document.getElementById('upload');
-        const file = fileInput.files[0];
+function getSavedFileName(){
+	var shape = getSelectedShape();
+    var width = document.getElementById('width').value;
+    var height = document.getElementById('height').value;
+    var pxSize = document.getElementById('sizeText').value;
+    var angle = document.getElementById('angleText').value;
 
-        if (!file) {
-            reject('No file selected');
-            return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function(event) {
-            const img = new Image();
-            img.onload = function() {
-                const canvas = document.getElementById('canvas');
-                const context = canvas.getContext('2d');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                context.drawImage(img, 0, 0, img.width, img.height);
-                const imageData = context.getImageData(0, 0, img.width, img.height);
-                resolve(imageData);
-            };
-            img.onerror = function() {
-                reject('Error loading image');
-            };
-            img.src = event.target.result;
-        };
-        reader.onerror = function() {
-            reject('Error reading file');
-        };
-        reader.readAsDataURL(file);
-    });
+    return "screentone_" + pxSize + "px@" + angle + "_" + shape + "_" + width + "x" + height + "px";
 }

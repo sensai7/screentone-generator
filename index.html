@@ -290,7 +290,6 @@
                 buttons.style.display = 'none';
                 createUploadedImageDataInterface();
 
-
 		        var fileInput = document.getElementById('upload');
 		        fileInput.addEventListener('change', function() {
 		            var file = fileInput.files[0];
@@ -318,6 +317,9 @@
 				                var img2 = new Image();
 				                img2.src = canvas.toDataURL();
 				                imgWrapper.appendChild(img2);
+
+				                var buttons = document.getElementById('buttonContainer');
+                				buttons.style.display = 'block';
 		                    }
 		                    img.src = e.target.result;
 		                }
@@ -344,6 +346,9 @@
 		                var img3 = new Image();
 		                img3.src = canvas.toDataURL();
 		                imgWrapper.appendChild(img3);
+
+		                var buttons = document.getElementById('buttonContainer');
+		                buttons.style.display = 'block';
 
 		            }
 		            img.src = uploadedImageDataUrl;

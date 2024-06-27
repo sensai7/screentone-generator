@@ -63,54 +63,28 @@ function createThresholdPattern(width, height, frequency, angle, shape) {
     }
 
     // angle things
+    var angleDegrees = angle;
 	angle = angle * Math.PI / 180;
 	cosAngle = Math.cos(angle);
 	sinAngle = Math.sin(angle);
 
-    var pattern = [];
+    
     if (shape != "random"){
-       for (let y = 0; y < height; y++) {
-            pattern[y] = [];
-            for (let x = 0; x < width; x++) {
-                let value;
-		        switch (shape) {
-                    case 'sine-cosine':
-                    	transformX = x * frequency * Math.cos(angle) - y * frequency * Math.sin(angle);
-    					transformY = x * frequency * Math.sin(angle) + y * frequency * Math.cos(angle);
-                        value = Math.cos(transformX) * Math.cos(transformY);
-                        break;
-	                case 'circles':
-                    	transformX = x * frequency * Math.cos(angle) - y * frequency * Math.sin(angle);
-    					transformY = x * frequency * Math.sin(angle) + y * frequency * Math.cos(angle);
-                        value = Math.abs(Math.sin(transformX)) + Math.abs(Math.cos(transformY));
-                        break;
-                    case 'lines':
-                    	transformX = x * frequency * Math.cos(angle) - y * frequency * Math.sin(angle);
-                    	value = Math.cos(transformX);
-                    	break;
-                    case 'squares':
-                    	value = coef2HarmonicSeries(x, y, frequency, [1, 0, 0.11111, 0, 0.04, 0, 0.02041, 0, 0.01234, 0, 0.00826], angle);
-                    	break;
-                    case 'sparkles':
-                    	value = coef2HarmonicSeries(x, y, frequency, [1, 0, 0.22222, 0, 0.12, 0, 0.0816, 0, 0.0617], angle);
-                    	break;
-                    case 'inception':
-                    	value = coef2HarmonicSeries(x, y, frequency, [1, 0, 0, 0, 1], angle);
-                    	break;
-                    case 'tartan':
-                    	value = coef2HarmonicSeries(x, y, frequency, [1, -0.4, 0.4, -0.2, -0.65, 0.4, 0.35, -0.95], angle);
-                    	break;
-                    case 'harmonic':
-						value = coef2HarmonicSeries(x, y, frequency, coef, angle);
-	    				break;
-	            }
-                pattern[y][x] = value;
-          	}
-    	}
+    	if (angleDegrees != 0) {
+	       	pattern = getPattern(width, height, shape, angle, frequency, coef);
+    	}else{	//45 degrees and the tile pattern is periodic with pixel radius period
+    		// compute a pixelRadius x pixelRadius tile
+    		var pixelRadius = document.getElementById('sizeText').value
+	       	pattern = getPattern(pixelRadius, pixelRadius, shape, angle, frequency, coef);
 
-    	minVal = minValue(pattern);
-    	maxVal = maxValue(pattern);
-    	pattern = normalize2D(pattern, minVal, maxVal);
+    		// normalize to 0-255
+	    	minVal = minValue(pattern);
+	    	maxVal = maxValue(pattern);
+	    	pattern = normalize2D(pattern, minVal, maxVal);
+
+    		// compose the entire pattern with the tiles
+    		pattern = createTiledArray(pattern, width, height);
+    	}
 
     }else{ // random pixels
     	for (let y = 0; y < height; y++) {
@@ -186,7 +160,7 @@ function getHarmonicCoef() {
   return coefficients;
 }
 
-function generatedImg2Screentone(imageData, canvas){
+function img2Screentone(imageData, canvas){
 	if (imageData) {
 		var ctx = canvas.getContext('2d', { willReadFrequently: true });
         var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
@@ -203,4 +177,72 @@ function generatedImg2Screentone(imageData, canvas){
         var buttons = document.getElementById('buttonContainer');
         buttons.style.display = 'block';
     }
+}
+
+function createTiledArray(pattern, width, height) {
+    const tileWidth = pattern[0].length;
+    const tileHeight = pattern.length;
+    const newArray = [];
+
+    for (let y = 0; y < height; y++) {
+        const row = [];
+        for (let x = 0; x < width; x++) {
+            //wrap around the pattern indices
+            const patternX = x % tileWidth;
+            const patternY = y % tileHeight;
+            row.push(pattern[patternY][patternX]);
+        }
+        newArray.push(row);
+    }
+
+    return newArray;
+}
+
+
+function getPattern(width, height, shape, angle, frequency, coef){
+	var pattern = [];
+	for (let y = 0; y < height; y++) {
+        pattern[y] = [];
+        for (let x = 0; x < width; x++) {
+            let value;
+	        switch (shape) {
+                case 'sine-cosine':
+                	transformX = x * frequency * Math.cos(angle) - y * frequency * Math.sin(angle);
+					transformY = x * frequency * Math.sin(angle) + y * frequency * Math.cos(angle);
+                    value = Math.cos(transformX) * Math.cos(transformY);
+                    break;
+                case 'circles':
+                	transformX = x * frequency * Math.cos(angle) - y * frequency * Math.sin(angle);
+					transformY = x * frequency * Math.sin(angle) + y * frequency * Math.cos(angle);
+                    value = Math.abs(Math.sin(transformX)) + Math.abs(Math.cos(transformY));
+                    break;
+                case 'lines':
+                	transformX = x * frequency * Math.cos(angle) - y * frequency * Math.sin(angle);
+                	value = Math.cos(transformX);
+                	break;
+                case 'squares':
+                	value = coef2HarmonicSeries(x, y, frequency, [1, 0, 0.11111, 0, 0.04, 0, 0.02041, 0, 0.01234, 0, 0.00826], angle);
+                	break;
+                case 'sparkles':
+                	value = coef2HarmonicSeries(x, y, frequency, [1, 0, 0.22222, 0, 0.12, 0, 0.0816, 0, 0.0617], angle);
+                	break;
+                case 'inception':
+                	value = coef2HarmonicSeries(x, y, frequency, [1, 0, 0, 0, 1], angle);
+                	break;
+                case 'tartan':
+                	value = coef2HarmonicSeries(x, y, frequency, [1, -0.4, 0.4, -0.2, -0.65, 0.4, 0.35, -0.95], angle);
+                	break;
+                case 'harmonic':
+					value = coef2HarmonicSeries(x, y, frequency, coef, angle);
+    				break;
+            }
+            pattern[y][x] = value;
+      	}
+	}
+
+	var minVal = minValue(pattern);
+	var maxVal = maxValue(pattern);
+	pattern = normalize2D(pattern, minVal, maxVal);
+
+	return pattern
 }

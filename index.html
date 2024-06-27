@@ -270,7 +270,6 @@
     	var uploadedImageDataUrl = null;
     	var filename = null;
 
-
         function refresh() {
         	document.getElementById('spinnerWrapper').style.display = 'flex';
 			var imgWrapper = document.getElementById('imgWrapper');
@@ -290,10 +289,10 @@
 	        setTimeout(() => {
 	            if (option1) {
 	            	imageData = createFlatImageData(canvas);
-	            	generatedImg2Screentone(imageData, canvas);
+	            	img2Screentone(imageData, canvas);
 	            } else if (option2) {
 	            	imageData = createGradientImageData(canvas);
-	            	generatedImg2Screentone(imageData, canvas);
+	            	img2Screentone(imageData, canvas);
 	            } else if (option3) {
 	                var buttons = document.getElementById('buttonContainer');
 	                buttons.style.display = 'none';
@@ -323,7 +322,7 @@
 			                canvas.height = img.height;
 			                ctx.drawImage(img, 0, 0);
 			                imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-			                generatedImg2Screentone(imageData, canvas);
+			                img2Screentone(imageData, canvas);
 			            }
 			            img.src = uploadedImageDataUrl;
 			        }

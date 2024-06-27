@@ -185,3 +185,22 @@ function getHarmonicCoef() {
   ];
   return coefficients;
 }
+
+function generatedImg2Screentone(imageData, canvas){
+	if (imageData) {
+		var ctx = canvas.getContext('2d', { willReadFrequently: true });
+        var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
+        var angle = document.getElementById('angleText').value;
+        var selectedShape = getSelectedShape();
+        var screentoneData = applyScreentone(imageData.data, imageData.width, imageData.height, frequency, angle, selectedShape);
+
+        // Put the screentone image data back to the canvas
+        ctx.putImageData(screentoneData, 0, 0);
+        var img = new Image();
+        img.src = canvas.toDataURL();
+
+        imgWrapper.appendChild(img);
+        var buttons = document.getElementById('buttonContainer');
+        buttons.style.display = 'block';
+    }
+}

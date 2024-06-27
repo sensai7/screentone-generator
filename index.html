@@ -279,12 +279,8 @@
             const option1 = document.getElementById('option1').checked;
             const option2 = document.getElementById('option2').checked;
             const option3 = document.getElementById('option3').checked;
-            var canvasWrapper = document.getElementById('canvas');
-            var selectedShape = getSelectedShape();
             var width = document.getElementById('width').value;
             var height = document.getElementById('height').value;
-            const colorSwapButtonContainer = document.getElementById('colorSwapButton');
-
 			var canvas = document.createElement('canvas');
 			canvas.width = width;
 			canvas.height = height;
@@ -294,8 +290,10 @@
 	        setTimeout(() => {
 	            if (option1) {
 	            	imageData = createFlatImageData(canvas);
+	            	generatedImg2Screentone(imageData, canvas);
 	            } else if (option2) {
 	            	imageData = createGradientImageData(canvas);
+	            	generatedImg2Screentone(imageData, canvas);
 	            } else if (option3) {
 	                var buttons = document.getElementById('buttonContainer');
 	                buttons.style.display = 'none';
@@ -312,33 +310,12 @@
 			                	var label = document.getElementById('uploadLabel');
 								label.innerHTML = filename;
 			                    var img = new Image();
-			                    img.onload = function() {
-			                        canvas.width = img.width;
-			                        canvas.height = img.height;
-			                        ctx.drawImage(img, 0, 0);
-			                        imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-			                        // Further processing with imageData
-
-					                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
-					                var angle = document.getElementById('angleText').value;
-					                var screentoneData = applyScreentone(imageData.data, imageData.width, imageData.height, frequency, angle, selectedShape);
-
-			                        imgWrapper.innerHTML = '';
-			                        ctx.putImageData(screentoneData, 0, 0);
-					                var img2 = new Image();
-					                img2.src = canvas.toDataURL();
-					                imgWrapper.appendChild(img2);
-
-					                var buttons = document.getElementById('buttonContainer');
-	                				buttons.style.display = 'block';
-			                    }
 			                    img.src = e.target.result;
 			                }
 			                reader.readAsDataURL(file);
 			            }
 			        });
 
-			        // If there is already an uploaded image, reload it
 			        if (uploadedImageDataUrl) {
 			            var img = new Image();
 			            img.onload = function() {
@@ -346,40 +323,10 @@
 			                canvas.height = img.height;
 			                ctx.drawImage(img, 0, 0);
 			                imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-
-			                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
-			                var angle = document.getElementById('angleText').value;
-			                var screentoneData = applyScreentone(imageData.data, imageData.width, imageData.height, frequency, angle, selectedShape);
-
-	                        imgWrapper.innerHTML = '';
-	                        ctx.putImageData(screentoneData, 0, 0);
-			                var img3 = new Image();
-			                img3.src = canvas.toDataURL();
-			                imgWrapper.appendChild(img3);
-
-			                var buttons = document.getElementById('buttonContainer');
-			                buttons.style.display = 'block';
-
+			                generatedImg2Screentone(imageData, canvas);
 			            }
 			            img.src = uploadedImageDataUrl;
 			        }
-	            }
-
-	            if (imageData) {
-	                console.log('Turning generated image into screentone');
-	                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
-	                var angle = document.getElementById('angleText').value;
-	                var screentoneData = applyScreentone(imageData.data, width, height, frequency, angle, selectedShape);
-
-	                // Put the screentone image data back to the canvas
-	                ctx.putImageData(screentoneData, 0, 0);
-	                var img = new Image();
-	                img.src = canvas.toDataURL();
-
-	                imgWrapper.appendChild(img);
-	                var buttons = document.getElementById('buttonContainer');
-	                buttons.style.display = 'block';
 	            }
 
 	            document.getElementById('spinnerWrapper').style.display = 'none';

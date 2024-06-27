@@ -239,6 +239,12 @@
             <label class="col-form-label">px</label>
         </div>
 
+		<div id="spinnerWrapper" style="display: none; text-align: center;" class="justify-content-center align-items-center">
+		  <div class="spinner-border" role="status">
+		    <span class="visually-hidden"></span>
+		  </div>
+		</div>
+
         <div id="imgWrapper" class="d-flex justify-content-center align-items-center" ></div>
 
         <!-- Buttons for copy and save -->
@@ -264,7 +270,12 @@
     	var uploadedImageDataUrl = null;
     	var filename = null;
 
+
         function refresh() {
+        	document.getElementById('spinnerWrapper').style.display = 'flex';
+			var imgWrapper = document.getElementById('imgWrapper');
+        	imgWrapper.innerHTML = '';
+
             const option1 = document.getElementById('option1').checked;
             const option2 = document.getElementById('option2').checked;
             const option3 = document.getElementById('option3').checked;
@@ -273,108 +284,106 @@
             var width = document.getElementById('width').value;
             var height = document.getElementById('height').value;
             const colorSwapButtonContainer = document.getElementById('colorSwapButton');
-            var imgWrapper = document.getElementById('imgWrapper');
-            imgWrapper.innerHTML = '';
-                        
+
 			var canvas = document.createElement('canvas');
 			canvas.width = width;
 			canvas.height = height;
 			var ctx = canvas.getContext('2d', { willReadFrequently: true });
-
             var imageData;
-            if (option1) {
-            	imageData = createFlatImageData(canvas);
-            } else if (option2) {
-            	imageData = createGradientImageData(canvas);
-            } else if (option3) {
-                var buttons = document.getElementById('buttonContainer');
-                buttons.style.display = 'none';
-                createUploadedImageDataInterface();
 
-		        var fileInput = document.getElementById('upload');
-		        fileInput.addEventListener('change', function() {
-		            var file = fileInput.files[0];
-		            filename = file.name;
-		            if (file) {
-		                var reader = new FileReader();
-		                reader.onload = function(e) {
-		                	uploadedImageDataUrl = e.target.result;
-		                	var label = document.getElementById('uploadLabel');
-							label.innerHTML = filename;
-		                    var img = new Image();
-		                    img.onload = function() {
-		                        canvas.width = img.width;
-		                        canvas.height = img.height;
-		                        ctx.drawImage(img, 0, 0);
-		                        imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-		                        // Further processing with imageData
+	        setTimeout(() => {
+	            if (option1) {
+	            	imageData = createFlatImageData(canvas);
+	            } else if (option2) {
+	            	imageData = createGradientImageData(canvas);
+	            } else if (option3) {
+	                var buttons = document.getElementById('buttonContainer');
+	                buttons.style.display = 'none';
+	                createUploadedImageDataInterface();
 
-				                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
-				                var angle = document.getElementById('angleText').value;
-				                var screentoneData = applyScreentone(imageData.data, imageData.width, imageData.height, frequency, angle, selectedShape);
+			        var fileInput = document.getElementById('upload');
+			        fileInput.addEventListener('change', function() {
+			            var file = fileInput.files[0];
+			            filename = file.name;
+			            if (file) {
+			                var reader = new FileReader();
+			                reader.onload = function(e) {
+			                	uploadedImageDataUrl = e.target.result;
+			                	var label = document.getElementById('uploadLabel');
+								label.innerHTML = filename;
+			                    var img = new Image();
+			                    img.onload = function() {
+			                        canvas.width = img.width;
+			                        canvas.height = img.height;
+			                        ctx.drawImage(img, 0, 0);
+			                        imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+			                        // Further processing with imageData
 
-		                        imgWrapper.innerHTML = '';
-		                        ctx.putImageData(screentoneData, 0, 0);
-				                var img2 = new Image();
-				                img2.src = canvas.toDataURL();
-				                imgWrapper.appendChild(img2);
+					                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
+					                var angle = document.getElementById('angleText').value;
+					                var screentoneData = applyScreentone(imageData.data, imageData.width, imageData.height, frequency, angle, selectedShape);
 
-				                var buttons = document.getElementById('buttonContainer');
-                				buttons.style.display = 'block';
-		                    }
-		                    img.src = e.target.result;
-		                }
-		                reader.readAsDataURL(file);
-		            }
-		        });
+			                        imgWrapper.innerHTML = '';
+			                        ctx.putImageData(screentoneData, 0, 0);
+					                var img2 = new Image();
+					                img2.src = canvas.toDataURL();
+					                imgWrapper.appendChild(img2);
 
-		        // If there is already an uploaded image, reload it
-		        if (uploadedImageDataUrl) {
-		            var img = new Image();
-		            img.onload = function() {
-		                canvas.width = img.width;
-		                canvas.height = img.height;
-		                ctx.drawImage(img, 0, 0);
-		                imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+					                var buttons = document.getElementById('buttonContainer');
+	                				buttons.style.display = 'block';
+			                    }
+			                    img.src = e.target.result;
+			                }
+			                reader.readAsDataURL(file);
+			            }
+			        });
+
+			        // If there is already an uploaded image, reload it
+			        if (uploadedImageDataUrl) {
+			            var img = new Image();
+			            img.onload = function() {
+			                canvas.width = img.width;
+			                canvas.height = img.height;
+			                ctx.drawImage(img, 0, 0);
+			                imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
 
-		                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
-		                var angle = document.getElementById('angleText').value;
-		                var screentoneData = applyScreentone(imageData.data, imageData.width, imageData.height, frequency, angle, selectedShape);
+			                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
+			                var angle = document.getElementById('angleText').value;
+			                var screentoneData = applyScreentone(imageData.data, imageData.width, imageData.height, frequency, angle, selectedShape);
 
-                        imgWrapper.innerHTML = '';
-                        ctx.putImageData(screentoneData, 0, 0);
-		                var img3 = new Image();
-		                img3.src = canvas.toDataURL();
-		                imgWrapper.appendChild(img3);
+	                        imgWrapper.innerHTML = '';
+	                        ctx.putImageData(screentoneData, 0, 0);
+			                var img3 = new Image();
+			                img3.src = canvas.toDataURL();
+			                imgWrapper.appendChild(img3);
 
-		                var buttons = document.getElementById('buttonContainer');
-		                buttons.style.display = 'block';
+			                var buttons = document.getElementById('buttonContainer');
+			                buttons.style.display = 'block';
 
-		            }
-		            img.src = uploadedImageDataUrl;
-		        }
+			            }
+			            img.src = uploadedImageDataUrl;
+			        }
+	            }
 
-            }
+	            if (imageData) {
+	                console.log('Turning generated image into screentone');
+	                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
+	                var angle = document.getElementById('angleText').value;
+	                var screentoneData = applyScreentone(imageData.data, width, height, frequency, angle, selectedShape);
 
-            if (imageData) {
-                console.log('Turning generated image into screentone');
-                var frequency = (Math.PI * 2) / document.getElementById('sizeText').value ;
-                var angle = document.getElementById('angleText').value;
-                var screentoneData = applyScreentone(imageData.data, width, height, frequency, angle, selectedShape);
+	                // Put the screentone image data back to the canvas
+	                ctx.putImageData(screentoneData, 0, 0);
+	                var img = new Image();
+	                img.src = canvas.toDataURL();
 
-                // Put the screentone image data back to the canvas
-                ctx.putImageData(screentoneData, 0, 0);
-                var img = new Image();
-                img.src = canvas.toDataURL();
+	                imgWrapper.appendChild(img);
+	                var buttons = document.getElementById('buttonContainer');
+	                buttons.style.display = 'block';
+	            }
 
-                imgWrapper.appendChild(img);
-                var buttons = document.getElementById('buttonContainer');
-                buttons.style.display = 'block';
-            }else{
-            	// this *should* never happen
-            }
-
+	            document.getElementById('spinnerWrapper').style.display = 'none';
+	        }, 100);  // ensure UI update
         }
 
         // Initial call to setup the page

@@ -93,6 +93,8 @@ function createFlatImageData(canvas){
 	const colorSwapButtonContainer = document.getElementById('colorSwapButton');
 	const gradientDirContainer = document.getElementById("gradient-direction-container");
 	const imageSizeContainer = document.getElementById("imageSizeContainer");
+	const hideSpacer = document.getElementById("hide-spacer");
+	hideSpacer.style.display = 'block';
 	colorPicker2Container.style.display = 'none';
 	colorSwapButtonContainer.style.display = 'none';
 	gradientDirContainer.style.display = 'none';
@@ -118,6 +120,8 @@ function createGradientImageData(canvas){
 	const colorSwapButtonContainer = document.getElementById('colorSwapButton');
 	const gradientDirContainer = document.getElementById("gradient-direction-container");
 	const imageSizeContainer = document.getElementById("imageSizeContainer");
+	const hideSpacer = document.getElementById("hide-spacer");
+	hideSpacer.style.display = 'block';
 	colorPicker2Container.style.display = 'block';
 	colorSwapButtonContainer.style.display = 'block';
 	gradientDirContainer.style.display = 'flex';
@@ -161,12 +165,12 @@ function createUploadedImageDataInterface(){
 	const colorPickers = document.getElementById('colorPickers');
 	const imageUpload = document.getElementById('imageUpload');
 	const gradientDirContainer = document.getElementById("gradient-direction-container");
+	const hideSpacer = document.getElementById("hide-spacer");
 	imageUpload.style.display = 'flex';
 	colorPickers.style.display = 'none';
 	gradientDirContainer.style.display = 'none';
 	imageSizeContainer.style.display = 'none';
-
-	//todo
+	hideSpacer.style.display = 'none';
 }
 
 function getSelectedShape(){

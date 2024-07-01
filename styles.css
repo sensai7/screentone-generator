@@ -21,10 +21,13 @@
 }
 
 .toast {
+
   visibility: hidden;
   min-width: 250px;
+  min-height: 50px;
+  line-height: 50px;
   margin-left: -125px;
-  background-color: #333;
+  background-color: #FFFFFF;
   color: #000000;
   text-align: center;
   border-radius: 2px;
@@ -59,4 +62,74 @@
 
 #spinnerWrapper{
 	margin-bottom: 15px;
+}
+
+h1{
+	margin-bottom: 2.5rem;
+}
+
+.col-sm-2{
+	width: 13.6%;
+}
+
+.col-sm-1{
+	min-width: 10.6%;
+}
+
+.form-check-input{
+	background-color: #ADADAD;
+}
+
+.spacer{
+	height: 2.5rem;
+}
+
+.lil-spacer{
+	height: 1rem;
+}
+
+.col-form-label{
+	padding-top: 0;
+	padding-right: 1rem;
+}
+
+.form-control-range{
+	width: 100%;
+	accent-color: #4bbf73;
+}
+
+.col-form-label{
+	text-align: right;
+}
+
+.unit-label{
+	text-align: left;
+	width: 2.5rem;
+}
+
+.label-center{
+	padding-top: .75rem;
+}
+
+.add-shadow{
+	box-shadow: 2px 2px 5px;
+	
+}
+
+input[type="number"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px #4bbf73;
+}
+
+.form-check-input:checked {
+    background-color: #4bbf73;
+    border-color: #4bbf73;
+}
+
+.form-check-input:checked[type=radio] {
+    --bs-form-check-bg-image: url(img/black-dot.svg);
+}
+
+.hover-pointer:hover {
+    cursor: pointer;
 }

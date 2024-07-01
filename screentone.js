@@ -172,7 +172,8 @@ function img2Screentone(imageData, canvas){
         ctx.putImageData(screentoneData, 0, 0);
         var img = new Image();
         img.src = canvas.toDataURL();
-
+        img.className = "add-shadow";
+        imgWrapper.innerHTML = '';
         imgWrapper.appendChild(img);
         var buttons = document.getElementById('buttonContainer');
         buttons.style.display = 'block';

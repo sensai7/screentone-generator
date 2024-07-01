@@ -4,13 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screentone Generator</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">  </head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">  
+        <link rel="stylesheet" type="text/css" href="styles.css">  
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/vnd.microsoft.icon" href="screentone.ico">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Lettering Tools</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="https://sensai7.github.io/screentone-generator/">Screentone Generator
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+<!--         <li class="nav-item">
+          <a class="nav-link" href="https://sensai7.github.io/photoshopScreentoneCalc/">Screentone Calculator</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
     <div class="container mt-5">
     	<div id="headerWrapper" class="d-flex justify-content-center align-items-center" >
     		<h1 class="">Screentone Generator</h1>
@@ -27,15 +49,17 @@
                 <label class="form-check-label" for="option2">Gradient</label>
             </div>
             <div class="col-sm-2 form-check">
-                <input class="form-check-input" type="radio" name="options" id="option3" value="3" onclick="refresh()">
+                <input class="form-check-input" type="radio" name="options" id="option3" value="3" onclick="refreshOption3()">
                 <label class="form-check-label" for="option3">Image upload</label>
             </div>
         </div>
 
+        <div class="lil-spacer" ></div>
+
         <!-- Color pickers -->
         <div id="colorPickers" class="form-group row justify-content-center text-center ">
             <div class="col-sm-2 ">
-                <input type="color" class="grayscale-picker form-control center-element" id="colorPicker1" style="width: 100px; height: 50px;" value="#a6a6a6" onchange="handleColorChange(this)">
+                <input type="color" class="grayscale-picker form-control center-element hover-pointer" id="colorPicker1" style="width: 100px; height: 50px;" value="#a6a6a6" onchange="handleColorChange(this)">
                 <div>Primary color</div>
             </div>
 	        <div class="col-sm-1 swap-button" id="colorSwapButton">
@@ -44,7 +68,7 @@
 	            </button>
 	        </div>
             <div class="col-sm-2 " id="colorPicker2Container" >
-                <input type="color" class="grayscale-picker form-control center-element" id="colorPicker2" style="width: 100px; height: 50px; margin : 0 auto;" value="#656565" onchange="handleColorChange(this)">
+                <input type="color" class="grayscale-picker form-control center-element hover-pointer" id="colorPicker2" style="width: 100px; height: 50px; margin : 0 auto;" value="#656565" onchange="handleColorChange(this)">
                 <div>Secondary color</div>
             </div>
         </div>
@@ -52,122 +76,132 @@
         <!-- Image upload -->
         <div id="imageUpload" class="form-group row justify-content-center text-center">
             <div class="col-sm-4">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="upload" accept="image/*" onchange="refresh()">
-                    <label class="custom-file-label" for="upload" id="uploadLabel">Choose file</label>
+                <div class="custom-file ">
+                    <input type="file" class="custom-file-input hover-pointer" id="upload" accept="image/*" onchange="refresh()">
                 </div>
             </div>
         </div>
 
 
+
 		<!-- Gradient direction -->
-		<div class="form-group row justify-content-center text-center" id="gradient-direction-container">
-		    <label class="col-sm-2 col-form-label">Gradient direction</label>
-		    <div class="col-sm-2 form-check d-flex align-items-center ">
-		        <input class="form-check-input" type="radio" name="gradient-direction" id="vertical" value="1" onclick="refresh()" checked>
-		        <label class="form-check-label" for="vertical">Vertical</label>
-		    </div>
-		    <div class="col-sm-2 form-check d-flex align-items-center ">
-		        <input class="form-check-input" type="radio" name="gradient-direction" id="horizontal" value="2" onclick="refresh()">
-		        <label class="form-check-label" for="horizontal">Horizontal</label>
-		    </div>
-		</div>
+		<div class="lil-spacer" ></div>
+        <div class="form-group row justify-content-center text-center " id="gradient-direction-container">
+			<label class="col-sm-2 col-form-label">Gradient direction: </label>
+            <div class="col-sm-2 form-check">
+                <input class="form-check-input" type="radio" name="gradient-direction" id="vertical" value="1" onclick="refresh()" checked>
+                <label class="form-check-label" for="vertical">Vertical</label>
+            </div>
+            <div class="col-sm-2 form-check">
+                <input class="form-check-input" type="radio" name="gradient-direction" id="horizontal" value="2" onclick="refresh()">
+                <label class="form-check-label" for="horizontal">Horizontal upload</label>
+            </div>
+        </div>
+
+
+
+    	<div class="lil-spacer" ></div>
 
 		<!-- Size control row -->
 		<div class="form-group row justify-content-center align-items-center">
-		    <label class="col-sm-2 col-form-label">Tile size</label>
+		    <label class="col-sm-2 col-form-label">Tile size:</label>
 		    <div class="col-sm-4 ">
-		        <input type="range" class="form-control-range" id="sizeSlider" min="2" max="100" value="26" oninput="syncSliderText('size')" onchange="refresh()">
+		        <input type="range" class="form-control-range" id="sizeSlider" min="2" max="99" value="26" oninput="syncSliderText('size')" onchange="refresh()">
 		    </div>
-		    <div class="col-sm-1.5">
-		        <input type="number" class="form-control" id="sizeText" min="2" max="100" value="26" oninput="syncTextSlider('size')" onchange="refresh()">
+		    <div class="col-sm-1">
+		        <input type="number" class="form-control" id="sizeText" min="2" max="99" value="26" oninput="syncTextSlider('size')" onchange="refresh()">
 		    </div>
-		    <label class="col-sm-1 col-form-label">px</label>
+		    <label class="col-sm-1 col-form-label unit-label">px</label>
 		</div>
 
 		<!-- Angle control row -->
 		<div class="form-group row justify-content-center align-items-center">
-		    <label class="col-sm-2 col-form-label">Angle</label>
+		    <label class="col-sm-2 col-form-label">Angle:</label>
 		    <div class="col-sm-4">
 		        <input type="range" class="form-control-range" id="angleSlider" min="0" max="90" value="45" oninput="syncSliderText('angle')" onchange="refresh()">
 		    </div>
-		    <div class="col-sm-1.5">
+		    <div class="col-sm-1">
 		        <input type="number" class="form-control" id="angleText" min="0" max="90" value="45" oninput="syncTextSlider('angle')" onchange="refresh()">
 		    </div>
-		    <label class="col-sm-1 col-form-label">°</label>
+		    <label class="col-sm-1 col-form-label unit-label">°</label>
 		</div>
 
+		<div class="spacer" ></div>
 
         <!-- Shape selection row -->
         <div class="form-group text-center">
             <label class="text-center">Basic shapes</label>
             <div class="row justify-content-center align-items-center">
                 <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape1" value="sine-cosine" onclick="refresh()" checked>
-                    <label class="form-check-label" for="shape1">
+                    <input class="form-check-input hover-pointer" type="radio" name="shape" id="shape1" value="sine-cosine" onclick="refresh()" checked>
+                    <label class="form-check-label hover-pointer" for="shape1">
                         <img src="img/sine-cosine.png" alt="Shape 1">
                         <div>Sine-cosine</div>
                     </label>
                 </div>
                 <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape2" value="circles" onclick="refresh()">
-                    <label class="form-check-label" for="shape2">
+                    <input class="form-check-input hover-pointer" type="radio" name="shape" id="shape2" value="circles" onclick="refresh()">
+                    <label class="form-check-label hover-pointer" for="shape2">
                         <img src="img/circles.png" alt="Shape 2">
                         <div>Circles</div>
                     </label>
                 </div>
                 <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape3" value="lines" onclick="refresh()">
-                    <label class="form-check-label" for="shape3">
+                    <input class="form-check-input hover-pointer" type="radio" name="shape" id="shape3" value="lines" onclick="refresh()">
+                    <label class="form-check-label hover-pointer" for="shape3">
                         <img src="img/lines.png" alt="Shape 3">
                         <div>Lines</div>
                     </label>
                 </div>
                 <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape4" value="random" onclick="refresh()">
-                    <label class="form-check-label" for="shape4">
+                    <input class="form-check-input hover-pointer" type="radio" name="shape" id="shape4" value="random" onclick="refresh()">
+                    <label class="form-check-label hover-pointer" for="shape4">
                         <img src="img/random.png" alt="Shape 4">
                         <div>Random</div>
                     </label>
                 </div>
             </div>
+            <div class="lil-spacer" ></div>
             <label class="text-center">Harmonic shapes</label>
+            
             <div class="row justify-content-center align-items-center">
                 <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape5" value="squares" onclick="refresh()">
-                    <label class="form-check-label" for="shape5">
+                    <input class="form-check-input hover-pointer" type="radio" name="shape" id="shape5" value="squares" onclick="refresh()">
+                    <label class="form-check-label hover-pointer" for="shape5">
                         <img src="img/squares.png" alt="Shape 5">
                         <div>Squares</div>
                     </label>
                 </div>
                 <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape6" value="sparkles" onclick="refresh()">
-                    <label class="form-check-label" for="shape6">
+                    <input class="form-check-input hover-pointer" type="radio" name="shape" id="shape6" value="sparkles" onclick="refresh()">
+                    <label class="form-check-label hover-pointer" for="shape6">
                         <img src="img/sparkles.png" alt="Shape 6">
                         <div>Sparkles</div>
                     </label>
                 </div>
                 <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape7" value="inception" onclick="refresh()">
-                    <label class="form-check-label" for="shape7">
+                    <input class="form-check-input hover-pointer" type="radio" name="shape" id="shape7" value="inception" onclick="refresh()">
+                    <label class="form-check-label hover-pointer" for="shape7">
                         <img src="img/inception.png" alt="Shape 7">
                         <div>Inception</div>
                     </label>
                 </div>
                 <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="shape8" value="tartan" onclick="refresh()">
-                    <label class="form-check-label" for="shape8">
+                    <input class="form-check-input hover-pointer" type="radio" name="shape" id="shape8" value="tartan" onclick="refresh()">
+                    <label class="form-check-label hover-pointer" for="shape8">
                         <img src="img/tartan.png" alt="Shape 8">
                         <div>Tartan</div>
                     </label>
                 </div>
             </div>
 
+			<div class="lil-spacer" ></div>
             <label class="text-center">Do It Yourself</label>
+
             <div class="row justify-content-center align-items-center">
                 <div class="col-sm-2 ">
-                    <input class="form-check-input" type="radio" name="shape" id="harmonic" value="harmonic" onclick="refresh()">
-                    <label class="form-check-label" for="harmonic">
+                    <input class="form-check-input hover-pointert" type="radio" name="shape" id="harmonic" value="harmonic" onclick="refresh()">
+                    <label class="form-check-label hover-pointer" for="harmonic">
                         <img src="img/arbitrary.png" alt="Shape 9">
                         <div>Harmonic</div>
                     </label>
@@ -186,6 +220,7 @@
 
         <!-- Harmonic coefficients -->
         <div class="form-group text-center" id="coef-container">
+        	<div class="lil-spacer" ></div>
 	        <label class="text-center">Harmonic coefficients</label> 
 	        <button type="button" class="btn btn-primary" onclick="generateCoefficients()">Randomize</button>
 	        <div class="row justify-content-center align-items-center">
@@ -226,18 +261,22 @@
 	        </div>
 	    </div>
 
+	    <div class="spacer" ></div>
+
         <!-- Image size control row -->
         <div class="form-group row justify-content-center" id="imageSizeContainer">
-            <label class="col-sm-2 col-form-label">Image size</label>
+            <label class="col-sm-2 col-form-label label-center">Image size: </label>
             <div class="col-sm-2">
                 <input type="number" class="form-control" id="width" min="1" value="256" onchange="refresh()">
             </div>
-            <label class="col-form-label">x</label>
+            <label class="col-form-label unit-label label-center" >x</label>
             <div class="col-sm-2">
                 <input type="number" class="form-control" id="height" min="1" value="256" onchange="refresh()">
             </div>
-            <label class="col-form-label">px</label>
+            <label class="col-form-label unit-label label-center">px</label>
         </div>
+
+		<div class="spacer" id="hide-spacer" ></div>
 
 		<div id="spinnerWrapper" style="display: none; text-align: center;" class="justify-content-center align-items-center">
 		  <div class="spinner-border" role="status">
@@ -245,7 +284,11 @@
 		  </div>
 		</div>
 
-        <div id="imgWrapper" class="d-flex justify-content-center align-items-center" ></div>
+        <div id="imgWrapper" class="d-flex justify-content-center align-items-center" >
+        	
+        </div>
+
+        <div class="lil-spacer" ></div>
 
         <!-- Buttons for copy and save -->
         <div id="buttonContainer" class="text-center mt-2">
@@ -269,20 +312,21 @@
 
     	var uploadedImageDataUrl = null;
     	var filename = null;
+    	var imgH = 0;
 
         function refresh() {
-        	document.getElementById('spinnerWrapper').style.display = 'flex';
 			var imgWrapper = document.getElementById('imgWrapper');
-        	imgWrapper.innerHTML = '';
-
-            const option1 = document.getElementById('option1').checked;
-            const option2 = document.getElementById('option2').checked;
-            const option3 = document.getElementById('option3').checked;
-            var width = document.getElementById('width').value;
+			var width = document.getElementById('width').value;
             var height = document.getElementById('height').value;
 			var canvas = document.createElement('canvas');
 			canvas.width = width;
 			canvas.height = height;
+        	updateImageSpace();
+
+            const option1 = document.getElementById('option1').checked;
+            const option2 = document.getElementById('option2').checked;
+            const option3 = document.getElementById('option3').checked;
+
 			var ctx = canvas.getContext('2d', { willReadFrequently: true });
             var imageData;
 
@@ -310,6 +354,7 @@
 								label.innerHTML = filename;
 			                    var img = new Image();
 			                    img.src = e.target.result;
+
 			                }
 			                reader.readAsDataURL(file);
 			            }
@@ -320,6 +365,8 @@
 			            img.onload = function() {
 			                canvas.width = img.width;
 			                canvas.height = img.height;
+			                imgH = img.height;
+			                updateImageSpace();
 			                ctx.drawImage(img, 0, 0);
 			                imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 			                img2Screentone(imageData, canvas);
@@ -331,6 +378,23 @@
 	            document.getElementById('spinnerWrapper').style.display = 'none';
 	        }, 100);  // ensure UI update
         }
+
+		function updateImageSpace() {
+		    var imgWrapper = document.getElementById('imgWrapper');
+
+		    if (!document.getElementById('option3').checked){
+		    	var height = document.getElementById('height').value;
+		    }else{
+
+		    	var height = imgH;
+		    }
+		    imgWrapper.style.height = height + 'px';
+		}
+
+		function refreshOption3(){
+			imgWrapper.innerHTML = '';
+			refresh();
+		}
 
         // Initial call to setup the page
         refresh();
